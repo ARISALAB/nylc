@@ -1,1 +1,1248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NYLC Business English Course</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#1d3f6e;
+  --navy-dk:#122847;
+  --navy-md:#2a5494;
+  --navy-lt:#dce8f7;
+  --navy-xl:#f0f5fc;
+  --gold:#8c6f2e;
+  --gold-dk:#6b5220;
+  --gold-md:#a8862e;
+  --gold-lt:#e8d8a0;
+  --gold-xl:#faf5e8;
+  --ivory:#faf8f4;
+  --cream:#f3f0ea;
+  --surface:#ffffff;
+  --s2:#f7f5f1;
+  --text:#1c1e2e;
+  --tm:#4a4d65;
+  --tl:#8e90a6;
+  --bdr:#d8d5cc;
+  --bdr-l:#eae8e2;
+  --grn:#1a6b46;
+  --grn-bg:#e5f2eb;
+  --red:#9e2a2a;
+  --red-bg:#f8eaea;
+  --amb:#7a5410;
+  --amb-bg:#faf1dc;
+  --r1:4px;
+  --r2:8px;
+  --r3:14px;
+  --r4:20px;
+  --sh1:0 1px 3px rgba(0,0,0,0.06),0 1px 8px rgba(28,62,110,0.05);
+  --sh2:0 4px 16px rgba(28,62,110,0.10),0 1px 4px rgba(0,0,0,0.06);
+  --sh3:0 8px 32px rgba(28,62,110,0.13);
+}
 
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);font-size:16px;line-height:1.7;min-height:100vh;-webkit-font-smoothing:antialiased}
+
+/* ── TOPBAR ── */
+.topbar{
+  background:var(--navy-dk);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 32px;height:62px;
+  position:sticky;top:0;z-index:300;
+  border-bottom:1px solid rgba(255,255,255,0.06);
+  box-shadow:0 2px 20px rgba(0,0,0,0.28);
+}
+.logo{display:flex;align-items:center;gap:12px;cursor:pointer}
+.logo-mark{
+  width:36px;height:36px;
+  display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;
+  border-radius:3px;overflow:hidden;
+  outline:1px solid rgba(255,255,255,0.2);
+}
+.lq{display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:11px;font-weight:600;color:#fff;letter-spacing:0.3px}
+.lq1,.lq4{background:#0e1f38}.lq2,.lq3{background:var(--gold-md)}
+.logo-name{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:600;color:#fff;letter-spacing:0.5px;line-height:1}
+.logo-sub{font-size:10px;color:rgba(255,255,255,0.45);letter-spacing:1.8px;text-transform:uppercase;margin-top:2px;font-weight:300}
+.nav-right{display:flex;align-items:center;gap:16px}
+.nav-crumb{font-size:12px;color:rgba(255,255,255,0.45);letter-spacing:0.3px;max-width:200px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.prog-track{width:80px;height:2px;background:rgba(255,255,255,0.12);border-radius:1px;overflow:hidden}
+.prog-fill{height:100%;background:var(--gold-md);border-radius:1px;transition:width 0.6s cubic-bezier(.4,0,.2,1)}
+.prog-label{font-size:11px;color:var(--gold-lt);font-weight:500;min-width:28px;letter-spacing:0.3px}
+
+/* ── LAYOUT ── */
+.shell{max-width:840px;margin:0 auto;padding:0 28px 100px}
+.screen{display:none;padding-top:40px;animation:rise 0.32s cubic-bezier(.4,0,.2,1)}
+.screen.active{display:block}
+@keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+
+/* ── HERO ── */
+.hero{
+  background:linear-gradient(135deg,var(--navy-dk) 0%,var(--navy) 60%,#2a5494 100%);
+  border-radius:var(--r4);padding:52px 48px;
+  margin-bottom:28px;position:relative;overflow:hidden;
+  box-shadow:var(--sh3);
+}
+.hero::before{
+  content:'';position:absolute;top:-60px;right:-60px;
+  width:280px;height:280px;
+  background:radial-gradient(circle,rgba(168,134,46,0.18) 0%,transparent 70%);
+  border-radius:50%;
+}
+.hero::after{
+  content:'';position:absolute;bottom:-40px;left:-20px;
+  width:200px;height:200px;
+  background:radial-gradient(circle,rgba(168,134,46,0.10) 0%,transparent 70%);
+  border-radius:50%;
+}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(168,134,46,0.2);border:1px solid rgba(168,134,46,0.35);
+  color:var(--gold-lt);font-size:11px;font-weight:500;
+  padding:5px 14px;border-radius:20px;margin-bottom:22px;
+  letter-spacing:1px;text-transform:uppercase;
+}
+.hero h1{
+  font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:600;
+  color:#fff;line-height:1.15;margin-bottom:16px;letter-spacing:-0.3px;
+}
+.hero p{font-size:16px;color:rgba(255,255,255,0.68);max-width:500px;line-height:1.8;margin-bottom:32px}
+.hero-stats{display:flex;gap:36px;margin-bottom:34px}
+.stat-num{font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:600;color:var(--gold-lt);line-height:1}
+.stat-lbl{font-size:11px;color:rgba(255,255,255,0.45);text-transform:uppercase;letter-spacing:0.8px;margin-top:4px}
+.hero-line{width:40px;height:1px;background:rgba(168,134,46,0.4);margin-bottom:32px}
+
+/* ── BUTTONS ── */
+.btn-gold{
+  background:var(--gold-md);color:#fff;border:none;
+  padding:13px 32px;border-radius:var(--r2);
+  font-size:15px;font-weight:500;cursor:pointer;
+  font-family:'DM Sans',sans-serif;letter-spacing:0.2px;
+  transition:background 0.18s,box-shadow 0.18s,transform 0.1s;
+  box-shadow:0 2px 8px rgba(140,111,46,0.3);
+}
+.btn-gold:hover{background:var(--gold-dk);box-shadow:0 4px 16px rgba(140,111,46,0.4);transform:translateY(-1px)}
+.btn-gold:active{transform:scale(0.98)}
+.btn-navy{
+  background:var(--navy);color:#fff;border:none;
+  padding:13px 32px;border-radius:var(--r2);
+  font-size:15px;font-weight:500;cursor:pointer;
+  font-family:'DM Sans',sans-serif;letter-spacing:0.2px;
+  transition:background 0.18s,transform 0.1s;
+}
+.btn-navy:hover{background:var(--navy-dk);transform:translateY(-1px)}
+.btn-ghost{
+  background:transparent;color:var(--text);
+  border:1px solid var(--bdr);
+  padding:12px 24px;border-radius:var(--r2);
+  font-size:14px;font-weight:500;cursor:pointer;
+  font-family:'DM Sans',sans-serif;
+  transition:all 0.15s;
+}
+.btn-ghost:hover{border-color:var(--navy-md);color:var(--navy);background:var(--navy-xl)}
+
+/* ── FEAT CARDS ── */
+.feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:28px}
+.feat-card{
+  background:var(--surface);border:1px solid var(--bdr-l);
+  border-radius:var(--r3);padding:22px 18px;
+  box-shadow:var(--sh1);transition:box-shadow 0.2s,transform 0.2s;
+}
+.feat-card:hover{box-shadow:var(--sh2);transform:translateY(-2px)}
+.feat-icon{font-size:26px;margin-bottom:10px}
+.feat-title{font-size:15px;font-weight:600;color:var(--navy);margin-bottom:4px}
+.feat-desc{font-size:13px;color:var(--tm);line-height:1.5}
+
+/* ── INFO BLOCK ── */
+.infoblock{
+  background:var(--surface);border:1px solid var(--bdr-l);
+  border-radius:var(--r3);padding:24px 28px;
+  margin-bottom:20px;box-shadow:var(--sh1);
+}
+.infoblock.ln{border-left:3px solid var(--navy-md)}
+.infoblock.lg{border-left:3px solid var(--gold-md)}
+.infoblock.lv{border-left:3px solid var(--grn)}
+.infoblock.lr{border-left:3px solid #c04a7a}
+.infoblock h4{
+  font-size:10px;font-weight:600;text-transform:uppercase;
+  letter-spacing:1.1px;color:var(--navy);margin-bottom:14px;
+}
+.infoblock.lg h4{color:var(--gold-dk)}
+.infoblock.lv h4{color:var(--grn)}
+.infoblock.lr h4{color:#882055}
+.infoblock p{font-size:15.5px;line-height:1.75;color:var(--text)}
+.infoblock p+p{margin-top:10px}
+.infoblock strong{color:var(--navy);font-weight:600}
+
+/* ── UNIT CARDS ── */
+.unit-grid{display:grid;gap:11px;margin-bottom:28px}
+.unit-card{
+  background:var(--surface);border:1px solid var(--bdr-l);
+  border-radius:var(--r3);padding:20px 24px;
+  cursor:pointer;transition:all 0.2s;
+  display:flex;align-items:center;gap:18px;
+  box-shadow:var(--sh1);
+}
+.unit-card:hover{border-color:var(--navy-md);transform:translateY(-1px);box-shadow:var(--sh2)}
+.unit-card.done{border-left:3px solid var(--grn)}
+.u-icon{width:46px;height:46px;border-radius:var(--r2);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.u-info{flex:1}
+.u-info h3{font-size:15.5px;font-weight:600;color:var(--text);margin-bottom:3px;letter-spacing:-0.1px}
+.u-info p{font-size:13.5px;color:var(--tm);line-height:1.5}
+.u-meta{display:flex;gap:7px;margin-top:8px;flex-wrap:wrap}
+.tag{display:inline-block;font-size:11px;font-weight:500;padding:3px 10px;border-radius:10px;letter-spacing:0.2px}
+.tn{background:var(--navy-xl);color:var(--navy-md)}
+.tg{background:var(--gold-xl);color:var(--gold-dk)}
+.tv{background:var(--grn-bg);color:var(--grn)}
+.u-arr{color:var(--tl);font-size:18px;margin-left:auto;flex-shrink:0}
+
+/* ── LESSON HEADER ── */
+.lhd{margin-bottom:28px}
+.bc{font-size:12px;color:var(--tl);margin-bottom:10px;display:flex;align-items:center;gap:5px}
+.bc a{color:var(--navy-md);text-decoration:none;cursor:pointer;font-weight:500}
+.bc a:hover{text-decoration:underline}
+.lhd h2{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:600;color:var(--navy-dk);line-height:1.15;margin-bottom:6px;letter-spacing:-0.2px}
+.lhd p{font-size:14.5px;color:var(--tm)}
+
+/* ── VOCAB ── */
+.vocab-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(195px,1fr));gap:10px;margin:14px 0}
+.vi{background:var(--s2);border:1px solid var(--bdr-l);border-radius:var(--r2);padding:12px 16px}
+.vi-term{font-weight:600;font-size:14.5px;color:var(--navy);margin-bottom:3px;letter-spacing:-0.1px}
+.vi-def{font-size:13px;color:var(--tm);line-height:1.45}
+.vi-ex{font-size:12px;color:var(--tl);margin-top:5px;font-style:italic}
+
+/* ── PHRASE TABLE ── */
+.ptable{width:100%;border-collapse:collapse;margin:14px 0;font-size:14.5px}
+.ptable th{text-align:left;padding:10px 16px;background:var(--navy-xl);color:var(--navy);font-weight:600;font-size:12px;letter-spacing:0.3px;border-bottom:2px solid var(--navy-lt)}
+.ptable td{padding:11px 16px;border-bottom:1px solid var(--bdr-l);line-height:1.55;color:var(--text);vertical-align:top}
+.ptable tr:last-child td{border-bottom:none}
+.ptable tr:nth-child(even) td{background:var(--s2)}
+.ptable em{color:var(--navy-md);font-style:italic}
+
+/* ── DIALOGUE ── */
+.dialogue{background:var(--s2);border:1px solid var(--bdr-l);border-radius:var(--r3);padding:22px 24px;margin:14px 0}
+.dl{display:flex;gap:14px;margin-bottom:14px;align-items:flex-start}
+.dl:last-child{margin-bottom:0}
+.dl-name{font-size:12px;font-weight:600;color:var(--navy);min-width:78px;padding-top:3px;letter-spacing:0.2px;text-transform:uppercase}
+.dl-text{font-size:15px;line-height:1.65;color:var(--text)}
+.dl-text em{color:var(--gold-dk);font-style:normal;font-weight:600}
+.dl-text strong{color:var(--navy);font-weight:600}
+
+/* ── EXAMPLE BOXES ── */
+.ebox{background:var(--navy-xl);border-radius:var(--r2);padding:18px 22px;margin:14px 0;border-left:3px solid var(--navy-md)}
+.ebox .elabel{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:var(--navy-md);margin-bottom:8px}
+.ebox p{font-size:15px;line-height:1.7;color:var(--text)}
+.gbox{background:var(--gold-xl);border-radius:var(--r2);padding:18px 22px;margin:14px 0;border-left:3px solid var(--gold-md)}
+.gbox .elabel{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:var(--gold-dk);margin-bottom:8px}
+.gbox p{font-size:15px;line-height:1.7;color:var(--text)}
+
+/* ── AUDIO PLAYER ── */
+.audio-shell{
+  background:linear-gradient(135deg,var(--navy-dk),var(--navy));
+  border-radius:var(--r3);padding:26px 28px;
+  margin:18px 0;box-shadow:var(--sh2);
+  border:1px solid rgba(255,255,255,0.06);
+}
+.audio-top{display:flex;align-items:center;gap:16px;margin-bottom:18px}
+.audio-meta{flex:1}
+.audio-title{font-size:15px;font-weight:600;color:#fff;margin-bottom:3px}
+.audio-sub{font-size:12px;color:rgba(255,255,255,0.5);letter-spacing:0.2px}
+.audio-badge{
+  font-size:10px;font-weight:600;letter-spacing:0.8px;text-transform:uppercase;
+  background:rgba(168,134,46,0.25);border:1px solid rgba(168,134,46,0.4);
+  color:var(--gold-lt);padding:4px 12px;border-radius:12px;white-space:nowrap;
+}
+audio{
+  width:100%;height:36px;border-radius:var(--r2);
+  filter:invert(1) hue-rotate(180deg) brightness(0.9);
+  outline:none;
+}
+audio::-webkit-media-controls-panel{background:rgba(255,255,255,0.08)}
+.audio-note{font-size:12px;color:rgba(255,255,255,0.4);margin-top:12px;font-style:italic}
+
+/* ── STEP LIST ── */
+.steps{display:grid;gap:11px;margin:14px 0}
+.step{display:flex;gap:14px;align-items:flex-start;padding:14px 18px;background:var(--s2);border-radius:var(--r2);border:1px solid var(--bdr-l)}
+.sn{width:26px;height:26px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;flex-shrink:0;margin-top:2px}
+.sb{font-size:15.5px;line-height:1.65;color:var(--text)}
+.sb strong{color:var(--navy);font-weight:600}
+
+/* ── TIPS ── */
+.tips{list-style:none;display:grid;gap:9px;margin:14px 0}
+.tips li{font-size:15px;padding:12px 18px;background:var(--surface);border-left:2px solid var(--gold-md);border-radius:0 var(--r2) var(--r2) 0;line-height:1.6;color:var(--text);box-shadow:var(--sh1)}
+.tips li strong{color:var(--navy);font-weight:600}
+
+/* ── QUIZ ── */
+.qwrap{background:var(--surface);border:1px solid var(--bdr-l);border-radius:var(--r3);padding:32px;box-shadow:var(--sh1)}
+.qbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;gap:16px}
+.qlabel{font-size:12px;color:var(--tl);font-weight:500;white-space:nowrap;letter-spacing:0.2px}
+.qtrack{flex:1;height:2px;background:var(--bdr-l);border-radius:1px;overflow:hidden}
+.qfill{height:100%;background:var(--gold-md);border-radius:1px;transition:width 0.4s}
+.qbadge{background:var(--navy-xl);color:var(--navy-md);font-size:12px;font-weight:600;padding:4px 12px;border-radius:12px;white-space:nowrap;letter-spacing:0.2px}
+.qq{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:500;color:var(--text);line-height:1.4;margin-bottom:22px}
+.qopts{display:grid;gap:10px;margin-bottom:22px}
+.qopt{
+  background:var(--s2);border:1px solid var(--bdr);
+  border-radius:var(--r2);padding:15px 18px;
+  text-align:left;cursor:pointer;font-size:15px;line-height:1.55;
+  transition:all 0.15s;display:flex;align-items:flex-start;gap:14px;
+  font-family:'DM Sans',sans-serif;color:var(--text);
+}
+.qopt:hover:not(:disabled){border-color:var(--navy-md);background:var(--navy-xl)}
+.qopt.correct{background:var(--grn-bg);border-color:var(--grn);color:var(--grn)}
+.qopt.wrong{background:var(--red-bg);border-color:var(--red);color:var(--red)}
+.qltr{
+  width:26px;height:26px;border-radius:50%;
+  background:var(--surface);border:1px solid var(--bdr);
+  display:flex;align-items:center;justify-content:center;
+  font-size:11px;font-weight:600;flex-shrink:0;margin-top:1px;color:var(--tl);
+  transition:all 0.15s;
+}
+.qopt.correct .qltr{background:var(--grn);border-color:var(--grn);color:#fff}
+.qopt.wrong .qltr{background:var(--red);border-color:var(--red);color:#fff}
+.qfb{padding:14px 18px;border-radius:var(--r2);margin-bottom:18px;font-size:14.5px;font-weight:500;line-height:1.55}
+.qfb.correct{background:var(--grn-bg);color:var(--grn)}
+.qfb.wrong{background:var(--red-bg);color:var(--red)}
+.qfoot{display:flex;justify-content:flex-end}
+.qdone{text-align:center;padding:40px 20px}
+.qdone .de{font-size:54px;margin-bottom:16px}
+.qdone h3{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:600;color:var(--navy);margin-bottom:8px}
+.qdone p{font-size:15px;color:var(--tm);margin-bottom:28px;line-height:1.65}
+
+/* ── TEST SCREEN ── */
+.test-banner{
+  background:linear-gradient(135deg,var(--navy-dk),var(--navy));
+  border-radius:var(--r4);padding:30px 36px;margin-bottom:24px;
+  box-shadow:var(--sh2);display:flex;align-items:center;gap:20px;
+}
+.test-logo-mark{width:50px;height:50px;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;border-radius:4px;overflow:hidden;outline:1px solid rgba(255,255,255,0.2);flex-shrink:0}
+.tlq{display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:13px;font-weight:600;color:#fff}
+.tlq1,.tlq4{background:#0e1f38}.tlq2,.tlq3{background:var(--gold-md)}
+.test-banner h2{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;color:#fff;margin-bottom:4px;letter-spacing:-0.2px}
+.test-banner p{font-size:13px;color:rgba(255,255,255,0.55)}
+.test-parts{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-bottom:22px}
+.tp{background:var(--surface);border:1px solid var(--bdr-l);border-radius:var(--r2);padding:18px 20px;box-shadow:var(--sh1)}
+.tp .pn{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:7px}
+.tp h4{font-size:15.5px;font-weight:600;color:var(--text);margin-bottom:3px}
+.tp p{font-size:13px;color:var(--tm)}
+.score-note{background:var(--gold-xl);border:1px solid #d9c880;border-radius:var(--r2);padding:16px 20px;margin-bottom:22px;font-size:14.5px;line-height:1.65;color:var(--text)}
+
+/* ── RESULTS ── */
+.cert{
+  background:linear-gradient(135deg,var(--navy-dk),var(--navy));
+  border-radius:var(--r4);padding:40px;text-align:center;
+  margin-bottom:24px;box-shadow:var(--sh3);position:relative;overflow:hidden;
+}
+.cert::before{content:'';position:absolute;top:-40px;right:-40px;width:160px;height:160px;background:radial-gradient(circle,rgba(168,134,46,0.2),transparent 70%);border-radius:50%}
+.cert .cert-icon{font-size:46px;margin-bottom:14px}
+.cert h2{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:600;color:#fff;margin-bottom:6px;letter-spacing:-0.2px}
+.cert p{font-size:14px;color:rgba(255,255,255,0.55)}
+.score-card{display:flex;align-items:center;justify-content:center;gap:40px;background:var(--surface);border:1px solid var(--bdr-l);border-radius:var(--r3);padding:32px;margin-bottom:18px;box-shadow:var(--sh1);flex-wrap:wrap}
+.big-num{font-family:'Cormorant Garamond',serif;font-size:56px;font-weight:600;color:var(--navy);line-height:1}
+.big-sub{font-size:13px;color:var(--tl);margin-top:4px;letter-spacing:0.2px}
+.verdict-t{font-size:20px;font-weight:600;color:var(--grn);margin-bottom:8px}
+.verdict-d{font-size:15px;color:var(--tm);line-height:1.65;max-width:320px}
+.breakdown{display:grid;gap:10px;margin-bottom:24px}
+.brow{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;background:var(--surface);border:1px solid var(--bdr-l);border-radius:var(--r2);box-shadow:var(--sh1)}
+.brow .sn2{font-size:15px;font-weight:500;color:var(--text)}
+.pill{font-size:13px;font-weight:500;padding:4px 14px;border-radius:12px}
+.pg{background:var(--grn-bg);color:var(--grn)}
+.pm{background:var(--amb-bg);color:var(--amb)}
+.pr{background:var(--red-bg);color:var(--red)}
+
+/* ── DIVIDER ── */
+.divider{height:1px;background:var(--bdr-l);margin:24px 0}
+.stitle{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:600;color:var(--navy-dk);margin-bottom:5px;letter-spacing:-0.2px}
+.ssub{font-size:16px;color:var(--tm);margin-bottom:24px;line-height:1.65}
+.row{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.sp{flex:1}
+.slabel{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:1.1px;color:var(--gold-dk);margin-bottom:12px}
+
+/* ── WRITING ── */
+.prompt-card{background:var(--gold-xl);border:1px solid #dccf90;border-left:3px solid var(--gold-md);border-radius:var(--r2);padding:20px 24px;margin-bottom:20px}
+.plabel{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:var(--gold-dk);margin-bottom:10px}
+.prompt-card p{font-size:15px;line-height:1.75;color:var(--text)}
+.pchips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.pchip{font-size:13px;font-weight:500;padding:6px 16px;border-radius:20px;border:1px solid var(--bdr);color:var(--tm);cursor:pointer;transition:all 0.15s;background:var(--surface)}
+.pchip:hover{border-color:var(--navy-md);color:var(--navy)}
+.pchip.used{background:var(--navy);color:#fff;border-color:var(--navy)}
+.ltextarea{width:100%;min-height:280px;border:1px solid var(--bdr);border-radius:var(--r2);padding:18px;font-size:15.5px;line-height:1.85;font-family:'DM Sans',sans-serif;color:var(--text);background:var(--surface);resize:vertical;transition:border-color 0.15s}
+.ltextarea:focus{outline:none;border-color:var(--navy-md);box-shadow:0 0 0 3px rgba(42,84,148,0.08)}
+.tpl{background:var(--surface);border:1px solid var(--bdr-l);border-radius:var(--r2);padding:22px 26px;font-size:14px;line-height:2.2;color:var(--tl);margin-bottom:18px}
+.tpl .tlbl{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:var(--gold-dk);margin-bottom:12px}
+.tpl em{color:var(--navy-md);font-style:normal;font-weight:500}
+
+/* ── SPEAKING ── */
+.inv-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:22px}
+.inv{background:var(--surface);border:1px solid var(--bdr-l);border-radius:var(--r3);padding:22px;cursor:pointer;transition:all 0.2s;text-align:center;box-shadow:var(--sh1)}
+.inv:hover{border-color:var(--navy-md);transform:translateY(-2px);box-shadow:var(--sh2)}
+.inv.sel{border-color:var(--navy);border-width:2px;background:var(--navy-xl)}
+.inv-em{font-size:38px;margin-bottom:12px}
+.inv-nm{font-size:14.5px;font-weight:600;color:var(--navy);margin-bottom:5px}
+.inv-dc{font-size:13px;color:var(--tm);line-height:1.45}
+.outcard{background:var(--surface);border:1px solid var(--bdr-l);border-radius:var(--r3);padding:28px;box-shadow:var(--sh1)}
+.outcard h4{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:var(--tl);margin-bottom:18px}
+.ostep{display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--bdr-l)}
+.ostep:last-child{border-bottom:none}
+.onum{width:28px;height:28px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;flex-shrink:0;margin-top:2px}
+.obody{flex:1;font-size:15px;line-height:1.65;color:var(--text)}
+.obody strong{color:var(--navy);font-weight:600}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="logo" onclick="showScreen('screen-home')">
+    <div class="logo-mark">
+      <div class="lq lq1">N</div><div class="lq lq2">Y</div>
+      <div class="lq lq3">L</div><div class="lq lq4">C</div>
+    </div>
+    <div>
+      <div class="logo-name">NYLC</div>
+      <div class="logo-sub">Business English</div>
+    </div>
+  </div>
+  <div class="nav-right">
+    <span class="nav-crumb" id="nav-label">Home</span>
+    <div class="prog-track"><div class="prog-fill" id="prog-fill" style="width:0%"></div></div>
+    <span class="prog-label" id="prog-pct">0%</span>
+  </div>
+</div>
+
+<div class="shell">
+
+<!-- ══════ HOME ══════ -->
+<div class="screen active" id="screen-home">
+  <div class="hero">
+    <div class="hero-eyebrow">✦ Complete Business English Programme</div>
+    <h1>Professional English<br>for the Modern Workplace</h1>
+    <p>A comprehensive, structured course covering every skill required in professional settings — from emails and meetings to negotiations and boardroom presentations.</p>
+    <div class="hero-line"></div>
+    <div class="hero-stats">
+      <div><div class="stat-num">8</div><div class="stat-lbl">Course Units</div></div>
+      <div><div class="stat-num">60+</div><div class="stat-lbl">Exercises</div></div>
+      <div><div class="stat-num">~6 hrs</div><div class="stat-lbl">Study Time</div></div>
+      <div><div class="stat-num">1</div><div class="stat-lbl">Final Test</div></div>
+    </div>
+    <button class="btn-gold" onclick="showScreen('screen-units')" style="font-size:16px;padding:15px 42px">Begin the Course →</button>
+  </div>
+  <div class="feat-grid">
+    <div class="feat-card"><div class="feat-icon">🎧</div><div class="feat-title">Listening</div><div class="feat-desc">Business conversations, speeches, podcasts</div></div>
+    <div class="feat-card"><div class="feat-icon">📖</div><div class="feat-title">Reading</div><div class="feat-desc">Articles, reports, memos, correspondence</div></div>
+    <div class="feat-card"><div class="feat-icon">✍️</div><div class="feat-title">Writing</div><div class="feat-desc">Emails, letters, reports, proposals</div></div>
+    <div class="feat-card"><div class="feat-icon">🎤</div><div class="feat-title">Speaking</div><div class="feat-desc">Presentations, meetings, negotiations</div></div>
+    <div class="feat-card"><div class="feat-icon">📊</div><div class="feat-title">Vocabulary</div><div class="feat-desc">Business idioms, collocations, register</div></div>
+    <div class="feat-card"><div class="feat-icon">🌍</div><div class="feat-title">Culture</div><div class="feat-desc">Cross-cultural etiquette and norms</div></div>
+  </div>
+  <div class="infoblock ln"><h4>How to use this course</h4><p>Work through each unit in sequence — each builds on the last. Every unit includes a lesson with key language, real-world examples, vocabulary, and a quiz. Complete all eight units, then sit the NYLC Final Test.</p></div>
+</div>
+
+<!-- ══════ UNITS ══════ -->
+<div class="screen" id="screen-units">
+  <div class="stitle">Course Units</div>
+  <div class="ssub">Eight units covering all areas of Business English — complete them in order for best results.</div>
+  <div class="unit-grid">
+    <div class="unit-card" onclick="gotoUnit('u1')"><div class="u-icon" style="background:#eef4fc">💼</div><div class="u-info"><h3>Unit 1 — Professional Communication</h3><p>Greetings, small talk, introductions, and telephone English</p><div class="u-meta"><span class="tag tn">45 min</span><span class="tag tg">Vocab + Quiz</span><span class="tag tv" id="d-u1" style="display:none">✓ Done</span></div></div><div class="u-arr">›</div></div>
+    <div class="unit-card" onclick="gotoUnit('u2')"><div class="u-icon" style="background:#faf5e8">📧</div><div class="u-info"><h3>Unit 2 — Business Emails & Correspondence</h3><p>Format, tone, and phrases for every email situation</p><div class="u-meta"><span class="tag tn">50 min</span><span class="tag tg">Writing + Quiz</span><span class="tag tv" id="d-u2" style="display:none">✓ Done</span></div></div><div class="u-arr">›</div></div>
+    <div class="unit-card" onclick="gotoUnit('u3')"><div class="u-icon" style="background:#e5f2eb">📋</div><div class="u-info"><h3>Unit 3 — Meetings & Discussions</h3><p>Chair meetings, contribute effectively, handle disagreement</p><div class="u-meta"><span class="tag tn">50 min</span><span class="tag tg">Dialogue + Quiz</span><span class="tag tv" id="d-u3" style="display:none">✓ Done</span></div></div><div class="u-arr">›</div></div>
+    <div class="unit-card" onclick="gotoUnit('u4')"><div class="u-icon" style="background:#f8eaea">📊</div><div class="u-info"><h3>Unit 4 — Presentations & Public Speaking</h3><p>Structure, deliver, and follow up on business presentations</p><div class="u-meta"><span class="tag tn">55 min</span><span class="tag tg">Speaking + Quiz</span><span class="tag tv" id="d-u4" style="display:none">✓ Done</span></div></div><div class="u-arr">›</div></div>
+    <div class="unit-card" onclick="gotoUnit('u5')"><div class="u-icon" style="background:#f4f0fa">📝</div><div class="u-info"><h3>Unit 5 — Reports & Formal Writing</h3><p>Business letters, reports, memos, and proposals</p><div class="u-meta"><span class="tag tn">55 min</span><span class="tag tg">Writing + Quiz</span><span class="tag tv" id="d-u5" style="display:none">✓ Done</span></div></div><div class="u-arr">›</div></div>
+    <div class="unit-card" onclick="gotoUnit('u6')"><div class="u-icon" style="background:#fff4e6">🤝</div><div class="u-info"><h3>Unit 6 — Negotiation & Persuasion</h3><p>Proposals, objections, concessions, and closing deals</p><div class="u-meta"><span class="tag tn">50 min</span><span class="tag tg">Dialogue + Quiz</span><span class="tag tv" id="d-u6" style="display:none">✓ Done</span></div></div><div class="u-arr">›</div></div>
+    <div class="unit-card" onclick="gotoUnit('u7')"><div class="u-icon" style="background:#eef4fc">🎧</div><div class="u-info"><h3>Unit 7 — Business Listening & Reading</h3><p>Strategies for articles, reports, audio and comprehension</p><div class="u-meta"><span class="tag tn">50 min</span><span class="tag tg">Audio + Quiz</span><span class="tag tv" id="d-u7" style="display:none">✓ Done</span></div></div><div class="u-arr">›</div></div>
+    <div class="unit-card" onclick="gotoUnit('u8')"><div class="u-icon" style="background:#faf5e8">🌍</div><div class="u-info"><h3>Unit 8 — Business Culture & Etiquette</h3><p>Professional norms, cross-cultural awareness, workplace etiquette</p><div class="u-meta"><span class="tag tn">40 min</span><span class="tag tg">Culture + Quiz</span><span class="tag tv" id="d-u8" style="display:none">✓ Done</span></div></div><div class="u-arr">›</div></div>
+  </div>
+  <div class="divider"></div>
+  <div style="text-align:center">
+    <p style="font-size:14.5px;color:var(--tl);margin-bottom:18px">Recommended after completing all eight units</p>
+    <button class="btn-navy" style="font-size:16px;padding:15px 42px" onclick="showScreen('screen-test')">Take the NYLC Final Test →</button>
+  </div>
+</div>
+
+<!-- ══════ U1: PROFESSIONAL COMMUNICATION ══════ -->
+<div class="screen" id="screen-u1">
+  <div class="lhd"><div class="bc"><a onclick="showScreen('screen-units')">← Units</a> <span>/</span> Unit 1</div><h2>Professional Communication</h2><p>Greetings, small talk, telephone English, and building rapport in the workplace</p></div>
+  <div id="u1-lesson">
+    <div class="infoblock ln"><h4>Why This Matters</h4><p>First impressions in business are formed within seconds. Whether meeting a client, joining a video call, or answering the phone, the language you use sets the tone for the entire relationship. Professional English is not just correct — it is warm, clear, and confident.</p></div>
+    <div class="infoblock lg"><h4>Formal vs Informal Greetings</h4>
+      <table class="ptable"><thead><tr><th>Situation</th><th>Formal</th><th>Informal (colleagues)</th></tr></thead><tbody>
+        <tr><td>First meeting</td><td><em>"Pleased to meet you, Mr Chen."</em></td><td><em>"Great to finally meet you!"</em></td></tr>
+        <tr><td>Morning</td><td><em>"Good morning, Ms Karimi."</em></td><td><em>"Morning! How are things?"</em></td></tr>
+        <tr><td>After absence</td><td><em>"Welcome back. I trust your trip was productive."</em></td><td><em>"Good to have you back! How was it?"</em></td></tr>
+      </tbody></table>
+    </div>
+    <div class="infoblock lv"><h4>Small Talk — Safe Topics & What to Avoid</h4>
+      <p><strong>Safe:</strong> the weather, your commute, local area, general sport, weekend plans (vague), the venue or building.</p>
+      <p><strong>Avoid:</strong> politics, religion, personal finances, health, relationship status — these create discomfort.</p>
+      <div class="dialogue" style="margin-top:14px">
+        <div class="dl"><div class="dl-name">Alex</div><div class="dl-text">"Did you have far to travel today?"</div></div>
+        <div class="dl"><div class="dl-name">Sara</div><div class="dl-text">"About an hour — the train was <em>surprisingly</em> on time, actually."</div></div>
+        <div class="dl"><div class="dl-name">Alex</div><div class="dl-text">"That's always a bonus. Can I get you a coffee before we start?"</div></div>
+      </div>
+    </div>
+    <div class="infoblock ln"><h4>Telephone English — Key Phrases</h4>
+      <table class="ptable"><thead><tr><th>Function</th><th>Phrase</th></tr></thead><tbody>
+        <tr><td>Answering</td><td><em>"Good morning, NYLC, Sarah speaking. How can I help?"</em></td></tr>
+        <tr><td>Asking for someone</td><td><em>"Could I speak to Mr Hartley, please?"</em></td></tr>
+        <tr><td>Leaving a message</td><td><em>"Could you tell him I called? I'll try again this afternoon."</em></td></tr>
+        <tr><td>Asking to repeat</td><td><em>"I'm sorry, could you repeat that? The line isn't very clear."</em></td></tr>
+        <tr><td>Ending the call</td><td><em>"Thank you for your time. I look forward to speaking again."</em></td></tr>
+      </tbody></table>
+    </div>
+    <div class="infoblock lg"><h4>Key Vocabulary</h4>
+      <div class="vocab-grid">
+        <div class="vi"><div class="vi-term">rapport</div><div class="vi-def">a warm, trusting relationship</div><div class="vi-ex">"We quickly built a good rapport with the client."</div></div>
+        <div class="vi"><div class="vi-term">agenda</div><div class="vi-def">a list of items to be discussed</div><div class="vi-ex">"The agenda has been circulated in advance."</div></div>
+        <div class="vi"><div class="vi-term">colleague</div><div class="vi-def">a person you work with</div><div class="vi-ex">"I'll introduce you to my colleague from legal."</div></div>
+        <div class="vi"><div class="vi-term">follow up</div><div class="vi-def">to take further action on something</div><div class="vi-ex">"I'll follow up with an email this afternoon."</div></div>
+        <div class="vi"><div class="vi-term">available</div><div class="vi-def">free and able to be reached</div><div class="vi-ex">"Is the director available for a call tomorrow?"</div></div>
+        <div class="vi"><div class="vi-term">brief (v.)</div><div class="vi-def">to give a summary of key information</div><div class="vi-ex">"Can you brief me before the meeting starts?"</div></div>
+      </div>
+    </div>
+    <div class="row"><div class="sp"></div><button class="btn-navy" onclick="startQuiz('u1')">Take the Quiz →</button></div>
+  </div>
+  <div id="u1-quiz" style="display:none"></div>
+</div>
+
+<!-- ══════ U2: EMAILS ══════ -->
+<div class="screen" id="screen-u2">
+  <div class="lhd"><div class="bc"><a onclick="showScreen('screen-units')">← Units</a> / Unit 2</div><h2>Business Emails & Correspondence</h2><p>Writing clear, professional emails for every workplace situation</p></div>
+  <div id="u2-lesson">
+    <div class="infoblock ln"><h4>The Five Golden Rules</h4>
+      <div class="steps">
+        <div class="step"><div class="sn">1</div><div class="sb"><strong>Subject line:</strong> Be specific. "Follow-up from Tuesday — action points" beats "Hi".</div></div>
+        <div class="step"><div class="sn">2</div><div class="sb"><strong>Salutation:</strong> "Dear Mr Chen," (formal) or "Hi Sarah," (colleague). Never "Dear Sir/Madam" if you know the name.</div></div>
+        <div class="step"><div class="sn">3</div><div class="sb"><strong>Opening line:</strong> State your purpose immediately. "I am writing to confirm our meeting on Thursday."</div></div>
+        <div class="step"><div class="sn">4</div><div class="sb"><strong>Body:</strong> One idea per paragraph. Short sentences. Use bullet points for lists of three or more.</div></div>
+        <div class="step"><div class="sn">5</div><div class="sb"><strong>Closing:</strong> Include a clear next step, then: "Kind regards," or "Best regards,"</div></div>
+      </div>
+    </div>
+    <div class="infoblock lg"><h4>Phrases by Function</h4>
+      <table class="ptable"><thead><tr><th>Function</th><th>Phrase</th></tr></thead><tbody>
+        <tr><td>Opening</td><td><em>"I am writing with regard to..." / "Further to our conversation..."</em></td></tr>
+        <tr><td>Requesting</td><td><em>"Could you please send me..." / "I would be grateful if you could..."</em></td></tr>
+        <tr><td>Apologising</td><td><em>"I apologise for the delay." / "I am sorry for any inconvenience caused."</em></td></tr>
+        <tr><td>Attaching</td><td><em>"Please find attached..." / "I have attached the report for your review."</em></td></tr>
+        <tr><td>Declining</td><td><em>"Unfortunately, I am unable to attend..." / "I regret to inform you that..."</em></td></tr>
+        <tr><td>Closing</td><td><em>"I look forward to hearing from you." / "Please do not hesitate to contact me."</em></td></tr>
+      </tbody></table>
+    </div>
+    <div class="infoblock lv"><h4>Formal vs Semi-formal Tone</h4>
+      <div class="ebox"><div class="elabel">Formal — external client</div><p>"Dear Ms Watkins,<br>I am writing to follow up on our meeting of 12th April and to confirm the revised delivery schedule. Please find the updated timeline attached for your approval.<br>Yours sincerely, David Marsh"</p></div>
+      <div class="gbox" style="margin-top:12px"><div class="elabel">Semi-formal — internal colleague</div><p>"Hi Laura, Quick update on the delivery — I've attached the revised schedule. Can you check if the new dates work for you? Thanks, David"</p></div>
+    </div>
+    <div class="infoblock lg"><h4>Key Vocabulary</h4>
+      <div class="vocab-grid">
+        <div class="vi"><div class="vi-term">cc (carbon copy)</div><div class="vi-def">to copy another person on an email</div></div>
+        <div class="vi"><div class="vi-term">attachment</div><div class="vi-def">a file sent alongside an email</div></div>
+        <div class="vi"><div class="vi-term">pending</div><div class="vi-def">awaiting action or a decision</div></div>
+        <div class="vi"><div class="vi-term">sign off</div><div class="vi-def">to formally approve or end communication</div></div>
+        <div class="vi"><div class="vi-term">loop in</div><div class="vi-def">to include someone in a communication</div></div>
+        <div class="vi"><div class="vi-term">action point</div><div class="vi-def">a specific task agreed for someone to complete</div></div>
+      </div>
+    </div>
+    <div class="row"><div class="sp"></div><button class="btn-navy" onclick="startQuiz('u2')">Take the Quiz →</button></div>
+  </div>
+  <div id="u2-quiz" style="display:none"></div>
+</div>
+
+<!-- ══════ U3: MEETINGS ══════ -->
+<div class="screen" id="screen-u3">
+  <div class="lhd"><div class="bc"><a onclick="showScreen('screen-units')">← Units</a> / Unit 3</div><h2>Meetings & Discussions</h2><p>Chair meetings, contribute effectively, and handle disagreement diplomatically</p></div>
+  <div id="u3-lesson">
+    <div class="infoblock ln"><h4>Chairing a Meeting</h4>
+      <table class="ptable"><thead><tr><th>Stage</th><th>Useful phrases</th></tr></thead><tbody>
+        <tr><td>Opening</td><td><em>"Let's get started. We have a lot to cover today."</em></td></tr>
+        <tr><td>Introducing agenda</td><td><em>"Today we need to discuss three things: firstly... secondly... and finally..."</em></td></tr>
+        <tr><td>Inviting input</td><td><em>"What's your view on this, Maria?" / "Does anyone have anything to add?"</em></td></tr>
+        <tr><td>Moving on</td><td><em>"Right, let's move on to the next item."</em></td></tr>
+        <tr><td>Summarising</td><td><em>"So, to summarise what we've agreed..."</em></td></tr>
+        <tr><td>Closing</td><td><em>"That's everything. I'll circulate the minutes by end of day."</em></td></tr>
+      </tbody></table>
+    </div>
+    <div class="infoblock lg"><h4>Agreeing, Disagreeing & Interrupting</h4>
+      <div class="dialogue">
+        <div class="dl"><div class="dl-name">Chair</div><div class="dl-text">"So the proposal is to increase the budget by 15%. Any thoughts?"</div></div>
+        <div class="dl"><div class="dl-name">Tom</div><div class="dl-text"><em>"I completely agree — the figures clearly support it."</em></div></div>
+        <div class="dl"><div class="dl-name">Priya</div><div class="dl-text"><em>"I take your point, but I'm not sure the timing is right. Could we revisit this next quarter?"</em></div></div>
+        <div class="dl"><div class="dl-name">Tom</div><div class="dl-text"><em>"Sorry to interrupt — if I could just add one thing — the deadline is fixed, so we can't delay."</em></div></div>
+        <div class="dl"><div class="dl-name">Chair</div><div class="dl-text"><em>"Fair point. Let's note both concerns and make a decision by end of week."</em></div></div>
+      </div>
+    </div>
+    <div class="infoblock lv"><h4>Key Meeting Phrases</h4>
+      <table class="ptable"><thead><tr><th>Function</th><th>Phrase</th></tr></thead><tbody>
+        <tr><td>Agreeing</td><td><em>"Absolutely." / "That's a good point." / "I'm in full agreement."</em></td></tr>
+        <tr><td>Partly agreeing</td><td><em>"I see what you mean, but..." / "That's true to some extent, however..."</em></td></tr>
+        <tr><td>Disagreeing (polite)</td><td><em>"I'm afraid I don't quite agree." / "I'd like to respectfully challenge that view."</em></td></tr>
+        <tr><td>Interrupting</td><td><em>"Could I just come in here?" / "Sorry to jump in, but..."</em></td></tr>
+        <tr><td>Clarifying</td><td><em>"What do you mean exactly by...?" / "Could you elaborate on that?"</em></td></tr>
+      </tbody></table>
+    </div>
+    <div class="infoblock lg"><h4>Key Vocabulary</h4>
+      <div class="vocab-grid">
+        <div class="vi"><div class="vi-term">minutes</div><div class="vi-def">official written record of a meeting</div></div>
+        <div class="vi"><div class="vi-term">AOB</div><div class="vi-def">Any Other Business — final agenda item</div></div>
+        <div class="vi"><div class="vi-term">unanimous</div><div class="vi-def">agreed by everyone present</div></div>
+        <div class="vi"><div class="vi-term">quorum</div><div class="vi-def">minimum number needed for a valid meeting</div></div>
+        <div class="vi"><div class="vi-term">adjourn</div><div class="vi-def">to officially pause or end a meeting</div></div>
+        <div class="vi"><div class="vi-term">consensus</div><div class="vi-def">general agreement among a group</div></div>
+      </div>
+    </div>
+    <div class="row"><div class="sp"></div><button class="btn-navy" onclick="startQuiz('u3')">Take the Quiz →</button></div>
+  </div>
+  <div id="u3-quiz" style="display:none"></div>
+</div>
+
+<!-- ══════ U4: PRESENTATIONS ══════ -->
+<div class="screen" id="screen-u4">
+  <div class="lhd"><div class="bc"><a onclick="showScreen('screen-units')">← Units</a> / Unit 4</div><h2>Presentations & Public Speaking</h2><p>Structure, deliver, and follow up on compelling business presentations</p></div>
+  <div id="u4-lesson">
+    <div class="infoblock ln"><h4>The Classic Presentation Structure</h4>
+      <div class="steps">
+        <div class="step"><div class="sn">1</div><div class="sb"><strong>Opening (10%):</strong> Hook — a bold question, surprising statistic, or striking statement. State your objective.</div></div>
+        <div class="step"><div class="sn">2</div><div class="sb"><strong>Signpost (5%):</strong> "I'll begin by looking at... then move to... and finally..."</div></div>
+        <div class="step"><div class="sn">3</div><div class="sb"><strong>Main content (70%):</strong> 3–4 clear points. Evidence, examples, visuals. Logical connections.</div></div>
+        <div class="step"><div class="sn">4</div><div class="sb"><strong>Summary (10%):</strong> "To summarise, the three key takeaways are..."</div></div>
+        <div class="step"><div class="sn">5</div><div class="sb"><strong>Close + Q&A (5%):</strong> Memorable final line. "I'm happy to take any questions."</div></div>
+      </div>
+    </div>
+    <div class="infoblock lg"><h4>Signposting Language</h4>
+      <table class="ptable"><thead><tr><th>Function</th><th>Phrase</th></tr></thead><tbody>
+        <tr><td>Starting</td><td><em>"Good morning, everyone. Today I'd like to talk to you about..."</em></td></tr>
+        <tr><td>Moving forward</td><td><em>"Moving on to my next point..." / "This brings me to..."</em></td></tr>
+        <tr><td>Referring to visuals</td><td><em>"As you can see from this slide..." / "This graph illustrates..."</em></td></tr>
+        <tr><td>Emphasising</td><td><em>"The key point here is..." / "What's particularly important is..."</em></td></tr>
+        <tr><td>Concluding</td><td><em>"In conclusion,..." / "To sum up..." / "My final point is..."</em></td></tr>
+      </tbody></table>
+    </div>
+    <div class="infoblock lv"><h4>Delivery Tips</h4>
+      <ul class="tips">
+        <li>Speak at <strong>120–140 words per minute</strong> — comfortable and clear for audiences.</li>
+        <li>Use <strong>deliberate pauses</strong> after key points — silence is powerful, not awkward.</li>
+        <li><strong>Eye contact</strong> — move your gaze across the room, not just to one person.</li>
+        <li><strong>Vary tone and volume</strong> — a monotone voice loses the audience within two minutes.</li>
+        <li>Replace filler words ("um", "uh", "sort of") with a <strong>confident pause</strong>.</li>
+      </ul>
+    </div>
+    <div class="infoblock lg"><h4>Key Vocabulary</h4>
+      <div class="vocab-grid">
+        <div class="vi"><div class="vi-term">signpost</div><div class="vi-def">language that guides the listener through the talk</div></div>
+        <div class="vi"><div class="vi-term">hook</div><div class="vi-def">an opening that captures attention immediately</div></div>
+        <div class="vi"><div class="vi-term">takeaway</div><div class="vi-def">the key message the audience should remember</div></div>
+        <div class="vi"><div class="vi-term">Q&A</div><div class="vi-def">questions and answers session after a presentation</div></div>
+        <div class="vi"><div class="vi-term">slide deck</div><div class="vi-def">a set of presentation slides</div></div>
+        <div class="vi"><div class="vi-term">brief (n.)</div><div class="vi-def">a short summary or set of instructions</div></div>
+      </div>
+    </div>
+    <div class="row"><div class="sp"></div><button class="btn-navy" onclick="startQuiz('u4')">Take the Quiz →</button></div>
+  </div>
+  <div id="u4-quiz" style="display:none"></div>
+</div>
+
+<!-- ══════ U5: FORMAL WRITING ══════ -->
+<div class="screen" id="screen-u5">
+  <div class="lhd"><div class="bc"><a onclick="showScreen('screen-units')">← Units</a> / Unit 5</div><h2>Reports & Formal Writing</h2><p>Business letters, formal reports, memos, and proposals</p></div>
+  <div id="u5-lesson">
+    <div class="infoblock ln"><h4>The Business Letter — 5 Parts</h4>
+      <div class="steps">
+        <div class="step"><div class="sn">1</div><div class="sb"><strong>Heading:</strong> Your address and the date.</div></div>
+        <div class="step"><div class="sn">2</div><div class="sb"><strong>Inside address:</strong> Recipient's full name, title, and address.</div></div>
+        <div class="step"><div class="sn">3</div><div class="sb"><strong>Salutation:</strong> "Dear Mr Hayashi," — always with a comma. Unknown: "Dear Sir or Madam,"</div></div>
+        <div class="step"><div class="sn">4</div><div class="sb"><strong>Body:</strong> Para 1: purpose. Para 2–3: main content. Para 4: closing action/request.</div></div>
+        <div class="step"><div class="sn">5</div><div class="sb"><strong>Signature:</strong> "Yours sincerely," (known name) or "Yours faithfully," (unknown). Leave space for signature + printed name.</div></div>
+      </div>
+    </div>
+    <div class="infoblock lg"><h4>Report Structure</h4>
+      <table class="ptable"><thead><tr><th>Section</th><th>Purpose</th><th>Key phrases</th></tr></thead><tbody>
+        <tr><td>Title</td><td>Identifies the document</td><td><em>"Report on..." / "An Analysis of..."</em></td></tr>
+        <tr><td>Executive Summary</td><td>Overview for busy readers</td><td><em>"This report examines... and recommends..."</em></td></tr>
+        <tr><td>Introduction</td><td>Background and scope</td><td><em>"The purpose of this report is to..."</em></td></tr>
+        <tr><td>Findings</td><td>What the research shows</td><td><em>"The data indicates..." / "It was found that..."</em></td></tr>
+        <tr><td>Conclusions</td><td>What the findings mean</td><td><em>"These results suggest that..."</em></td></tr>
+        <tr><td>Recommendations</td><td>Proposed next steps</td><td><em>"It is recommended that..." / "We propose..."</em></td></tr>
+      </tbody></table>
+    </div>
+    <div class="infoblock lv"><h4>Formal Language Rules</h4>
+      <p>Avoid contractions ("cannot" not "can't"). Use passive where appropriate ("The report was submitted"). Avoid slang. Use hedging for uncertainty ("It appears that..." / "The evidence suggests...").</p>
+      <div class="ebox" style="margin-top:14px"><div class="elabel">Informal → Formal</div><p>"We got the data and it showed things were going wrong." →<br><em>"The data collected indicated that performance had declined below acceptable levels."</em></p></div>
+    </div>
+    <div class="infoblock lg"><h4>Key Vocabulary</h4>
+      <div class="vocab-grid">
+        <div class="vi"><div class="vi-term">executive summary</div><div class="vi-def">a brief overview at the start of a long document</div></div>
+        <div class="vi"><div class="vi-term">findings</div><div class="vi-def">the results of research or investigation</div></div>
+        <div class="vi"><div class="vi-term">recommendation</div><div class="vi-def">a suggested action based on findings</div></div>
+        <div class="vi"><div class="vi-term">scope</div><div class="vi-def">the range of topics covered in a document</div></div>
+        <div class="vi"><div class="vi-term">memorandum</div><div class="vi-def">an internal written communication within an organisation</div></div>
+        <div class="vi"><div class="vi-term">proposal</div><div class="vi-def">a document suggesting a plan or course of action</div></div>
+      </div>
+    </div>
+    <div class="row"><div class="sp"></div><button class="btn-navy" onclick="startQuiz('u5')">Take the Quiz →</button></div>
+  </div>
+  <div id="u5-quiz" style="display:none"></div>
+</div>
+
+<!-- ══════ U6: NEGOTIATION ══════ -->
+<div class="screen" id="screen-u6">
+  <div class="lhd"><div class="bc"><a onclick="showScreen('screen-units')">← Units</a> / Unit 6</div><h2>Negotiation & Persuasion</h2><p>Make proposals, handle objections, and reach professional agreements</p></div>
+  <div id="u6-lesson">
+    <div class="infoblock ln"><h4>The Five Stages of Negotiation</h4>
+      <div class="steps">
+        <div class="step"><div class="sn">1</div><div class="sb"><strong>Prepare:</strong> Know your ideal outcome and your walk-away point before you begin.</div></div>
+        <div class="step"><div class="sn">2</div><div class="sb"><strong>Open:</strong> Establish the agenda and tone. "We're hoping to reach an agreement that works for both sides."</div></div>
+        <div class="step"><div class="sn">3</div><div class="sb"><strong>Propose:</strong> Make your offer clearly. "We'd like to propose a 10% discount in exchange for a 12-month contract."</div></div>
+        <div class="step"><div class="sn">4</div><div class="sb"><strong>Bargain:</strong> Conditional offers. "If you can commit to a larger order, we'd be willing to look at the price."</div></div>
+        <div class="step"><div class="sn">5</div><div class="sb"><strong>Close:</strong> Confirm the agreement. "So, just to confirm what we've agreed..." Then follow up in writing.</div></div>
+      </div>
+    </div>
+    <div class="infoblock lg"><h4>Negotiation in Practice</h4>
+      <div class="dialogue">
+        <div class="dl"><div class="dl-name">Buyer</div><div class="dl-text"><em>"We were hoping for a price closer to €45,000."</em></div></div>
+        <div class="dl"><div class="dl-name">Seller</div><div class="dl-text"><em>"I understand your position. That's slightly below what we had in mind. Could we look at the payment terms?"</em></div></div>
+        <div class="dl"><div class="dl-name">Buyer</div><div class="dl-text"><em>"What did you have in mind?"</em></div></div>
+        <div class="dl"><div class="dl-name">Seller</div><div class="dl-text"><em>"If you're able to pay 50% upfront, we could bring it down to €47,500."</em></div></div>
+        <div class="dl"><div class="dl-name">Buyer</div><div class="dl-text"><em>"Let me check with my finance team and come back to you by tomorrow."</em></div></div>
+      </div>
+    </div>
+    <div class="infoblock lv"><h4>Key Phrases</h4>
+      <table class="ptable"><thead><tr><th>Function</th><th>Phrase</th></tr></thead><tbody>
+        <tr><td>Making an offer</td><td><em>"We'd like to propose..." / "How about if we...?"</em></td></tr>
+        <tr><td>Conditional offers</td><td><em>"If you... then we could..." / "Provided that... we'd be willing to..."</em></td></tr>
+        <tr><td>Thinking time</td><td><em>"That's an interesting point. Could I have some time to consider?"</em></td></tr>
+        <tr><td>Handling objections</td><td><em>"I understand your concern. What if we...?"</em></td></tr>
+        <tr><td>Reaching agreement</td><td><em>"So we're agreed on..." / "Let's confirm that in writing."</em></td></tr>
+        <tr><td>Walking away</td><td><em>"I'm afraid we can't accept those terms."</em></td></tr>
+      </tbody></table>
+    </div>
+    <div class="infoblock lg"><h4>Key Vocabulary</h4>
+      <div class="vocab-grid">
+        <div class="vi"><div class="vi-term">concession</div><div class="vi-def">something given up to reach agreement</div></div>
+        <div class="vi"><div class="vi-term">bottom line</div><div class="vi-def">the minimum acceptable terms</div></div>
+        <div class="vi"><div class="vi-term">leverage</div><div class="vi-def">advantage or power in a negotiation</div></div>
+        <div class="vi"><div class="vi-term">win-win</div><div class="vi-def">an outcome beneficial to both parties</div></div>
+        <div class="vi"><div class="vi-term">deadlock</div><div class="vi-def">a situation where no progress can be made</div></div>
+        <div class="vi"><div class="vi-term">counterproposal</div><div class="vi-def">an alternative offer made in response</div></div>
+      </div>
+    </div>
+    <div class="row"><div class="sp"></div><button class="btn-navy" onclick="startQuiz('u6')">Take the Quiz →</button></div>
+  </div>
+  <div id="u6-quiz" style="display:none"></div>
+</div>
+
+<!-- ══════ U7: LISTENING & READING ══════ -->
+<div class="screen" id="screen-u7">
+  <div class="lhd"><div class="bc"><a onclick="showScreen('screen-units')">← Units</a> / Unit 7</div><h2>Business Listening & Reading</h2><p>Strategies for comprehending audio, articles, and business documents</p></div>
+  <div id="u7-lesson">
+    <div class="infoblock ln"><h4>Listening Strategies</h4>
+      <div class="steps">
+        <div class="step"><div class="sn">1</div><div class="sb"><strong>Before listening:</strong> Read the questions first — this focuses your attention on relevant information.</div></div>
+        <div class="step"><div class="sn">2</div><div class="sb"><strong>While listening:</strong> Note key words — numbers, names, facts. Don't panic if you miss something; focus on the next sentence.</div></div>
+        <div class="step"><div class="sn">3</div><div class="sb"><strong>Inference:</strong> Ask yourself — "What is the speaker's attitude? What does this word choice suggest?"</div></div>
+        <div class="step"><div class="sn">4</div><div class="sb"><strong>After listening:</strong> Review your notes against the questions. Eliminate wrong options using logic.</div></div>
+      </div>
+    </div>
+
+    <div class="audio-shell">
+      <div class="audio-top">
+        <div class="audio-meta">
+          <div class="audio-title">NPR Planet Money — Price Gouging</div>
+          <div class="audio-sub">Business English listening practice · Economics &amp; market language</div>
+        </div>
+        <div class="audio-badge">🎧 Unit 7 Audio</div>
+      </div>
+      <audio controls src="audio_1.mp3" preload="metadata"></audio>
+      <div class="audio-note">Listen carefully for: economic terms, speaker attitudes, factual claims, and implied meaning. You will answer comprehension questions after the lesson.</div>
+    </div>
+
+    <div class="infoblock lg"><h4>Reading Strategies</h4>
+      <div class="steps">
+        <div class="step"><div class="sn">1</div><div class="sb"><strong>Skim (30s):</strong> Read title, first sentence of each paragraph, last paragraph. Get the overall argument.</div></div>
+        <div class="step"><div class="sn">2</div><div class="sb"><strong>Scan:</strong> Look for specific information — names, numbers, dates. Eyes move quickly, not word by word.</div></div>
+        <div class="step"><div class="sn">3</div><div class="sb"><strong>Read for detail:</strong> Go back to relevant paragraphs. Underline key facts.</div></div>
+        <div class="step"><div class="sn">4</div><div class="sb"><strong>Infer:</strong> What does the writer imply but not directly state? Notice word choice and tone.</div></div>
+      </div>
+    </div>
+    <div class="infoblock lv"><h4>Business Text Types</h4>
+      <table class="ptable"><thead><tr><th>Text type</th><th>Key features to look for</th></tr></thead><tbody>
+        <tr><td>News article</td><td>Who/what/when/where in first paragraph; quotes; balanced views</td></tr>
+        <tr><td>CEO speech</td><td>Company direction, values, numbers, employee messages, future plans</td></tr>
+        <tr><td>Business report</td><td>Findings, recommendations, formal register, structured sections</td></tr>
+        <tr><td>Press release</td><td>Persuasive language, positive framing, specific claims</td></tr>
+        <tr><td>Internal memo</td><td>Direct tone, action points, dates, named recipients</td></tr>
+      </tbody></table>
+    </div>
+    <div class="infoblock lg"><h4>Key Vocabulary</h4>
+      <div class="vocab-grid">
+        <div class="vi"><div class="vi-term">infer</div><div class="vi-def">to conclude from indirect evidence</div></div>
+        <div class="vi"><div class="vi-term">imply</div><div class="vi-def">to suggest without stating directly</div></div>
+        <div class="vi"><div class="vi-term">paraphrase</div><div class="vi-def">to restate in different words</div></div>
+        <div class="vi"><div class="vi-term">register</div><div class="vi-def">the level of formality in language</div></div>
+        <div class="vi"><div class="vi-term">gist</div><div class="vi-def">the main point or general meaning</div></div>
+        <div class="vi"><div class="vi-term">price gouging</div><div class="vi-def">charging unfairly high prices during a crisis</div></div>
+      </div>
+    </div>
+    <div class="row"><div class="sp"></div><button class="btn-navy" onclick="startQuiz('u7')">Take the Quiz →</button></div>
+  </div>
+  <div id="u7-quiz" style="display:none"></div>
+</div>
+
+<!-- ══════ U8: CULTURE ══════ -->
+<div class="screen" id="screen-u8">
+  <div class="lhd"><div class="bc"><a onclick="showScreen('screen-units')">← Units</a> / Unit 8</div><h2>Business Culture & Etiquette</h2><p>Professional norms, cross-cultural communication, and workplace etiquette</p></div>
+  <div id="u8-lesson">
+    <div class="infoblock ln"><h4>Universal Professional Norms</h4>
+      <ul class="tips">
+        <li><strong>Punctuality:</strong> Arrive on time or slightly early. If delayed: "I'm running about 10 minutes late — I apologise for the inconvenience."</li>
+        <li><strong>Business cards:</strong> In many Asian cultures, receive and present with both hands. Read the card before putting it away. Never write on it.</li>
+        <li><strong>Dress code:</strong> When in doubt, dress more formally than you expect — easier to dress down once you know the environment.</li>
+        <li><strong>Digital etiquette:</strong> Mute when not speaking on calls. Frame yourself centrally on camera. Reply to emails within 24 hours on business days.</li>
+      </ul>
+    </div>
+    <div class="infoblock lg"><h4>High-Context vs Low-Context Cultures</h4>
+      <table class="ptable"><thead><tr><th>Area</th><th>High-context (e.g. Japan, China, Middle East)</th><th>Low-context (e.g. USA, Germany, Netherlands)</th></tr></thead><tbody>
+        <tr><td>Communication</td><td>Indirect; meaning often implied</td><td>Direct; meaning stated explicitly</td></tr>
+        <tr><td>Decisions</td><td>Consensus-driven; may take longer</td><td>Often made by one person quickly</td></tr>
+        <tr><td>Relationships</td><td>Must be built before business begins</td><td>Business can begin without prior relationship</td></tr>
+        <tr><td>Saying "No"</td><td><em>"That might be difficult..."</em></td><td><em>"No, that won't work."</em></td></tr>
+      </tbody></table>
+    </div>
+    <div class="infoblock lv"><h4>Sensitive Situations — Language to Use</h4>
+      <div class="dialogue">
+        <div class="dl"><div class="dl-name">Feedback</div><div class="dl-text"><em>"The report is a strong start. One area I'd like us to develop further is the data analysis section."</em></div></div>
+        <div class="dl"><div class="dl-name">Declining</div><div class="dl-text"><em>"Thank you so much for the invitation. Unfortunately I have a prior commitment, but I'd love to be involved next time."</em></div></div>
+        <div class="dl"><div class="dl-name">Mistake</div><div class="dl-text"><em>"I owe you an apology — there was an error in the figures I sent. I've corrected it and it's on its way to you now."</em></div></div>
+      </div>
+    </div>
+    <div class="infoblock lg"><h4>Key Vocabulary</h4>
+      <div class="vocab-grid">
+        <div class="vi"><div class="vi-term">etiquette</div><div class="vi-def">the rules of polite behaviour in society</div></div>
+        <div class="vi"><div class="vi-term">protocol</div><div class="vi-def">the accepted rules in a formal situation</div></div>
+        <div class="vi"><div class="vi-term">hierarchy</div><div class="vi-def">a system of different levels of authority</div></div>
+        <div class="vi"><div class="vi-term">diplomatic</div><div class="vi-def">tactful; careful not to cause offence</div></div>
+        <div class="vi"><div class="vi-term">prior commitment</div><div class="vi-def">something already arranged that prevents attendance</div></div>
+        <div class="vi"><div class="vi-term">cultural sensitivity</div><div class="vi-def">awareness and respect for cultural differences</div></div>
+      </div>
+    </div>
+    <div class="row"><div class="sp"></div><button class="btn-navy" onclick="startQuiz('u8')">Take the Quiz →</button></div>
+  </div>
+  <div id="u8-quiz" style="display:none"></div>
+</div>
+
+<!-- ══════ FINAL TEST ══════ -->
+<div class="screen" id="screen-test">
+  <div class="test-banner">
+    <div class="test-logo-mark">
+      <div class="tlq tlq1">N</div><div class="tlq tlq2">Y</div>
+      <div class="tlq tlq3">L</div><div class="tlq tlq4">C</div>
+    </div>
+    <div>
+      <h2>NYLC Business English Test</h2>
+      <p>Official examination format — all four parts</p>
+    </div>
+  </div>
+
+  <div class="audio-shell" style="margin-bottom:20px">
+    <div class="audio-top">
+      <div class="audio-meta">
+        <div class="audio-title">Listening Test Audio — NPR Planet Money: Price Gouging</div>
+        <div class="audio-sub">Listen before answering Part I questions · Do not pause during the test</div>
+      </div>
+      <div class="audio-badge">Part I Audio</div>
+    </div>
+    <audio controls src="audio_1.mp3" preload="metadata"></audio>
+  </div>
+
+  <div class="test-parts">
+    <div class="tp"><div class="pn" style="color:var(--navy-md)">Part I</div><h4>Listening</h4><p>10 questions · NPR Planet Money audio</p></div>
+    <div class="tp"><div class="pn" style="color:var(--grn)">Part II</div><h4>Reading</h4><p>5 questions · Business article</p></div>
+    <div class="tp"><div class="pn" style="color:var(--gold-dk)">Part III</div><h4>Writing</h4><p>10 MCQs · formal writing · 20 pts</p></div>
+    <div class="tp"><div class="pn" style="color:#822055">Part IV</div><h4>Speaking</h4><p>10 MCQs · presentation skills · 20 pts</p></div>
+  </div>
+  <div class="score-note"><strong>Scoring:</strong> Listening (10 pts) + Reading (10 pts) + Writing (20 pts) + Speaking (20 pts) = <strong>60 points total.</strong> A score of 42 or above (70%) is a pass. All four parts are assessed instantly — your final mark is calculated automatically.</div>
+  <div class="row">
+    <button class="btn-ghost" onclick="showScreen('screen-units')">← Back to Units</button>
+    <div class="sp"></div>
+    <button class="btn-navy" style="font-size:16px;padding:15px 42px" onclick="startFinalTest()">Begin Test →</button>
+  </div>
+  <div id="final-test-content" style="margin-top:28px"></div>
+</div>
+
+<!-- ══════ RESULTS ══════ -->
+<div class="screen" id="screen-results">
+  <div class="cert">
+    <div class="cert-icon">🎓</div>
+    <h2>Certificate of Completion</h2>
+    <p>NYLC Business English Course — all units completed</p>
+  </div>
+  <div class="score-card">
+    <div style="text-align:center">
+      <svg width="112" height="112" viewBox="0 0 112 112">
+        <circle cx="56" cy="56" r="48" fill="none" stroke="#e8e4d8" stroke-width="7"/>
+        <circle cx="56" cy="56" r="48" fill="none" stroke="var(--navy)" stroke-width="7" stroke-dasharray="301" stroke-dashoffset="90" stroke-linecap="round" transform="rotate(-90 56 56)" id="score-arc"/>
+      </svg>
+      <div style="margin-top:-68px;position:relative;z-index:1">
+        <div class="big-num" id="final-score">42</div>
+        <div class="big-sub">/ 60 pts</div>
+      </div>
+      <div style="margin-top:52px"></div>
+    </div>
+    <div>
+      <div class="verdict-t" id="verdict-title">Pass — Well done!</div>
+      <div class="verdict-d" id="verdict-desc">You have demonstrated strong Business English competency across all tested areas.</div>
+    </div>
+  </div>
+  <div class="breakdown">
+    <div class="brow"><span class="sn2">Part I — Listening</span><span class="pill pg" id="r-listen">— / 10</span></div>
+    <div class="brow"><span class="sn2">Part II — Reading</span><span class="pill pg" id="r-read">— / 10</span></div>
+    <div class="brow"><span class="sn2">Part III — Writing</span><span class="pill pg" id="r-write">— / 20</span></div>
+    <div class="brow"><span class="sn2">Part IV — Speaking</span><span class="pill pg" id="r-speak">— / 20</span></div>
+  </div>
+  <div class="row" style="justify-content:center;gap:14px">
+    <button class="btn-ghost" onclick="showScreen('screen-units')">Review Units</button>
+    <button class="btn-navy" onclick="restartCourse()">Start Again</button>
+  </div>
+</div>
+
+</div><!-- /shell -->
+
+<script>
+// ── QUIZ DATA ──
+const quizData={
+  u1:[
+    {q:"Which phrase is most appropriate when answering a business phone call?",opts:["Yeah, what do you want?","Good morning, NYLC, Sarah speaking. How can I help?","Hello?","Who's calling?"],ans:1,exp:"A professional phone greeting includes company name, your name, and an offer to help."},
+    {q:"What is an appropriate small-talk topic in a business context?",opts:["Someone's salary","Political opinions","The journey to the office","A colleague's relationship status"],ans:2,exp:"The commute is a safe, neutral topic — easy and pleasant to discuss briefly."},
+    {q:"What does 'to brief someone' mean?",opts:["To fire them","To give a summary of key information","To write them a letter","To invite them to a meeting"],ans:1,exp:"To brief someone is to give them the key facts and context they need quickly."},
+    {q:"Which phrase is correct for leaving a professional voicemail?",opts:["Could you tell him I called? I'll try again this afternoon.","He wasn't there.","Tell him to call me back.","I needed to speak to him."],ans:0,exp:"A professional message is polite, gives your name, and states a clear next step."},
+    {q:"'Rapport' in a business context means:",opts:["A formal report","A financial result","A warm, trusting relationship","A legal agreement"],ans:2,exp:"Building rapport means creating trust and a positive connection with colleagues and clients."}
+  ],
+  u2:[
+    {q:"Which subject line is most effective for a business email?",opts:["Hi","Follow-up from Tuesday's meeting — action points","Question","Important!!!"],ans:1,exp:"An effective subject line is specific and tells the reader exactly what to expect."},
+    {q:"Which closing phrase is most appropriate for a formal email to a client?",opts:["See ya!","Cheers","I look forward to hearing from you.","Later."],ans:2,exp:"'I look forward to hearing from you' is professional and implies a clear expectation of reply."},
+    {q:"When writing to someone whose name you do not know, the correct salutation is:",opts:["Dear Friend,","Dear Sir or Madam,","To Whom,","Hello,"],ans:1,exp:"'Dear Sir or Madam,' is the standard formal salutation when the recipient is unknown."},
+    {q:"What does 'cc' mean in an email?",opts:["Cancel communication","Carbon copy — copying another person on the email","Confirmed contact","Correct copy"],ans:1,exp:"Cc (carbon copy) means the listed person receives the email as an additional recipient."},
+    {q:"Which phrase is most appropriate for apologising in a formal email?",opts:["Oops, sorry!","My bad.","I apologise for the delay and any inconvenience caused.","Don't worry about it."],ans:2,exp:"Formal apologies are specific, sincere, and use professional language."}
+  ],
+  u3:[
+    {q:"How does a chair politely move a meeting to the next agenda item?",opts:["That's boring, let's move on.","Right, let's move on to the next item.","Stop talking.","Next!"],ans:1,exp:"Chairs use courteous, clear phrases that keep the meeting moving without dismissing speakers."},
+    {q:"Which phrase diplomatically disagrees with a colleague?",opts:["You're completely wrong.","That's a terrible idea.","I take your point, but I'm not sure the timing is right.","No."],ans:2,exp:"Diplomatic disagreement acknowledges the other person's view before offering an alternative."},
+    {q:"What are 'minutes' in a business context?",opts:["The 60 seconds of a meeting","The official written record of a meeting","A short email","The agenda"],ans:1,exp:"Minutes are the official written record of what was discussed and decided in a meeting."},
+    {q:"Which phrase politely interrupts a speaker?",opts:["Be quiet!","Sorry to jump in, but I just wanted to add...","Stop.","You're wrong."],ans:1,exp:"Polite interruptions acknowledge that you are cutting in and are framed apologetically."},
+    {q:"'AOB' at the end of an agenda stands for:",opts:["All On Board","Any Other Business","Area of Business","Always On Budget"],ans:1,exp:"AOB (Any Other Business) is the final agenda item for topics not covered elsewhere."}
+  ],
+  u4:[
+    {q:"What is a 'hook' in the context of a presentation?",opts:["A question at the end","An opening that immediately captures the audience's attention","A visual aid","A slide with data"],ans:1,exp:"A hook is a powerful opening — a question, statistic, or bold statement that makes the audience want to listen."},
+    {q:"Which phrase is an example of signposting language?",opts:["Um, so...","This brings me to my next point...","I forgot what I was going to say.","The end."],ans:1,exp:"Signposting guides listeners through the presentation and makes it easy to follow your structure."},
+    {q:"What is the recommended speaking pace for a business presentation?",opts:["As fast as possible","200 words per minute","120–140 words per minute","50 words per minute"],ans:2,exp:"120–140 words per minute is clear, natural, and comfortable for audiences to follow."},
+    {q:"Which phrase is best for concluding a presentation?",opts:["I'm done.","That's it.","To sum up, the three main takeaways are...","OK goodbye."],ans:2,exp:"A strong conclusion recaps the key messages clearly and deliberately."},
+    {q:"What does 'Q&A' stand for in a presentation context?",opts:["Quality and Accuracy","Questions and Answers","Quick and Assertive","Quotes and Analysis"],ans:1,exp:"Q&A is the questions and answers session that typically follows a presentation."}
+  ],
+  u5:[
+    {q:"In a formal business letter, 'Yours sincerely' is used when:",opts:["You do not know the recipient's name","You know the recipient's name and have addressed them by it","Writing to a company, not a person","Sending an internal memo"],ans:1,exp:"'Yours sincerely' is used when you know the person's name (Dear Mr Smith). If unknown, use 'Yours faithfully'."},
+    {q:"What is the purpose of an 'executive summary'?",opts:["A summary written only by executives","A brief overview at the start for readers who may not read the full document","The final section of a report","A list of action points"],ans:1,exp:"An executive summary gives busy readers the key findings without needing to read the full document."},
+    {q:"Which is an example of formal language?",opts:["We got the data and things looked bad.","The data collected indicated that performance had declined significantly.","Stuff wasn't going well.","Things were a mess."],ans:1,exp:"Formal writing uses precise vocabulary, complete sentences, and avoids contractions and casual expressions."},
+    {q:"What is a 'memo' in a business context?",opts:["A social media post","A formal press release","An internal written communication within an organisation","A legal contract"],ans:2,exp:"A memorandum (memo) is an internal document used to communicate within a company."},
+    {q:"In a formal report, which section contains suggested next steps?",opts:["Introduction","Findings","Executive Summary","Recommendations"],ans:3,exp:"The recommendations section proposes specific actions based on the findings of the report."}
+  ],
+  u6:[
+    {q:"What is a 'concession' in a negotiation?",opts:["A failure","Something given up to reach agreement","The opening offer","A legal document"],ans:1,exp:"A concession is something you give up or compromise on in order to make progress toward agreement."},
+    {q:"Which phrase makes a conditional offer in a negotiation?",opts:["Take it or leave it.","No, that's impossible.","If you can commit to a 12-month contract, we could offer a 10% discount.","We won't budge."],ans:2,exp:"Conditional offers use 'if... then...' structures and show flexibility while protecting your interests."},
+    {q:"'The bottom line' in a negotiation means:",opts:["The profit figure","The minimum terms you will accept","The final page of the contract","The starting price"],ans:1,exp:"The bottom line is the absolute minimum — below which you would walk away."},
+    {q:"Which phrase is best for stalling to think in a negotiation?",opts:["No.","That's an interesting point. Could I have some time to consider?","Fine, whatever you want.","Deal."],ans:1,exp:"Asking for time to consider is professional, buys thinking space, and does not weaken your position."},
+    {q:"What does 'win-win' mean in a business context?",opts:["Both sides lose","One side wins completely","An outcome beneficial to both parties","A type of contract"],ans:2,exp:"A win-win outcome means both parties feel they have gained something — the ideal negotiation result."}
+  ],
+  u7:[
+    {q:"What is 'skimming' a text?",opts:["Reading every word slowly","Quickly reading to get the general message","Looking for a specific word or number","Ignoring the text entirely"],ans:1,exp:"Skimming means reading rapidly to get an overall impression — useful for understanding the main argument quickly."},
+    {q:"What does 'to infer' mean in a listening/reading context?",opts:["To copy a sentence","To translate a word","To conclude something from evidence not stated directly","To summarise a paragraph"],ans:2,exp:"Inference is reading between the lines — understanding what is implied, not just what is stated."},
+    {q:"When listening to a business audio, what should you do first?",opts:["Wait until the end before thinking","Read the questions first so you know what to listen for","Take notes on absolutely everything","Guess the answers"],ans:1,exp:"Reading questions first focuses your listening and helps you identify relevant information as you hear it."},
+    {q:"What is 'register' in language use?",opts:["A list of names","The tone and level of formality","The speed of speaking","The accent of a speaker"],ans:1,exp:"Register refers to the level of formality in language — formal, semi-formal, or informal — depending on context."},
+    {q:"'Price gouging' refers to:",opts:["Competitive pricing strategies","Charging unfairly high prices during a crisis or emergency","Discounting products to gain market share","Setting a fixed price by law"],ans:1,exp:"Price gouging is the practice of raising prices to exploitative levels, typically during a crisis or period of high demand."}
+  ],
+  u8:[
+    {q:"In high-context cultures, 'no' is often expressed as:",opts:["A direct, blunt refusal","'That might be difficult' or similar indirect language","Raised voices","Complete silence"],ans:1,exp:"High-context cultures communicate indirectly to avoid confrontation — indirect phrases signal a refusal."},
+    {q:"What is the professional norm when receiving a business card in many Asian business cultures?",opts:["Put it in your back pocket immediately","Write notes on it during the meeting","Receive it with both hands and read it carefully","Ignore it"],ans:2,exp:"Receiving a card with both hands and reading it shows respect — a key norm in Japan, China, and other Asian cultures."},
+    {q:"What does 'diplomatic' mean in a professional context?",opts:["Working in another country","Tactful and careful not to cause offence","Aggressive in negotiations","Speaking multiple languages"],ans:1,exp:"Being diplomatic means choosing language carefully to maintain positive relationships, especially in sensitive situations."},
+    {q:"What is the correct thing to do if you are running 10 minutes late to a business meeting?",opts:["Say nothing and arrive when you can","Communicate immediately and apologise","Cancel by text at the last minute","Blame traffic when you arrive"],ans:1,exp:"Professional etiquette requires communicating a delay as soon as you know, with a sincere apology."},
+    {q:"Which phrase best gives constructive feedback professionally?",opts:["This is terrible.","The report is a strong start. One area to develop further is the data analysis section.","It's fine, I suppose.","Do it again."],ans:1,exp:"Constructive feedback acknowledges strengths first, then identifies a specific area for improvement with positive framing."}
+  ]
+};
+
+// Final test Q's (based on NPR Price Gouging for listening + employee motivation article for reading)
+const listenQs=[
+  {q:"What is the main topic of the NPR Planet Money episode?",opts:["Import tariffs and global trade","Price gouging and whether it should be legal","Minimum wage legislation","Corporate tax avoidance"],ans:1,exp:"The episode centres on the debate around price gouging — specifically whether laws against it help or harm consumers."},
+  {q:"What term do economists use for the practice of raising prices sharply during a crisis?",opts:["Price fixing","Market correction","Price gouging","Supply shock"],ans:2,exp:"Price gouging is the specific term for dramatically increasing prices during emergencies or periods of high demand."},
+  {q:"What is the general argument made by economists who defend price increases during a crisis?",opts:["Companies deserve more profit during hard times","Higher prices signal scarcity and attract more supply to the market","Consumers should stockpile goods before a crisis","Governments should control all pricing"],ans:1,exp:"The economic argument is that higher prices act as a signal, encouraging more suppliers to bring goods to the market."},
+  {q:"Which of the following best describes the opposing view on price gouging?",opts:["It is an efficient market mechanism","It harms vulnerable people who cannot afford essentials","It encourages competition","It reduces government spending"],ans:1,exp:"Critics of price gouging argue it exploits vulnerable people who have no choice but to pay inflated prices for necessities."},
+  {q:"What example is used in the episode to illustrate the debate?",opts:["Fuel prices after a hurricane","Tech company pricing strategies","Airline ticket prices","Pharmaceutical drug prices"],ans:0,exp:"The episode uses the example of essential goods — like fuel and water — whose prices spike after natural disasters such as hurricanes."},
+  {q:"What do anti-price-gouging laws typically do?",opts:["Allow companies to set any price they wish","Prevent prices from rising above a certain level during declared emergencies","Require companies to donate goods during crises","Set a maximum profit margin for all goods"],ans:1,exp:"Anti-price-gouging laws cap price increases during declared states of emergency to protect consumers."},
+  {q:"Which perspective does the episode suggest is more difficult to communicate to the public?",opts:["The moral argument against gouging","The economic argument in favour of letting prices rise","The legal framework around pricing","Corporate profit reporting"],ans:1,exp:"The economic argument — that higher prices can attract supply — is counterintuitive and harder for the public to accept emotionally."},
+  {q:"What does the episode suggest about the relationship between law and economics in this area?",opts:["They are perfectly aligned","They frequently conflict — legal protections may create economic inefficiencies","Economics always overrides the law","Laws are irrelevant to market behaviour"],ans:1,exp:"The episode highlights the tension between economic theory (prices should adjust freely) and legal/moral protections for consumers."},
+  {q:"How does the episode approach the issue overall?",opts:["It strongly defends price gouging","It strongly condemns price gouging","It presents both sides of the debate in a balanced way","It avoids drawing any conclusions"],ans:2,exp:"Planet Money is known for exploring economic issues from multiple perspectives — this episode presents both the economic case and the moral counter-argument."},
+  {q:"What can be inferred about the episode's intended audience?",opts:["Economics academics only","Business executives making pricing decisions","A general audience curious about how economics works in everyday life","Government policymakers only"],ans:2,exp:"Planet Money targets a general, curious audience — the episode uses accessible language and relatable examples to explain economic concepts."}
+];
+const readingQs=[
+  {q:"What do companies not understand well, according to recent research?",opts:["What attracts workers to join a company.","What makes workers want to stay in a job.","What makes employees want to perform well."],ans:1,exp:"The research focuses specifically on retention — what keeps employees from leaving, not what attracts them."},
+  {q:"Which was among employees' main motivations?",opts:["Recognition of individual achievement","The company's ethics","The remuneration package"],ans:0,exp:"Recognition of individual achievement ranked highest among employee motivators — above salary."},
+  {q:"How have workers responded to the economic downturn?",opts:["Many accepted jobs way below their ability level.","Many developed new expertise for their work.","They concealed lack of ability to compete."],ans:0,exp:"The article states that many workers accepted positions below their qualification level during the downturn."},
+  {q:"What does Brian Wilkinson recommend companies invest in?",opts:["Cost-cutting technology","Retaining key staff","Making employment more flexible"],ans:1,exp:"Wilkinson specifically recommends investing in retention programmes for key employees."},
+  {q:"What does the article say about working away from the office?",opts:["It is increasingly popular with workers.","Many employers strongly encourage it.","It is unlikely to be a permanent solution for most companies."],ans:2,exp:"The article suggests remote working has limits — it is not seen as a permanent solution for most organisations."}
+];
+
+// ── STATE ──
+let completedUnits=new Set();
+let cQuiz=[],cQ=0,cScore=0,cAnswered=false,cUnit='';
+let fQ=0,fScore=0,fAnswered=false;
+// allFinalQs defined below with all 4 parts
+
+function showScreen(id){
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  const labels={'screen-home':'Home','screen-units':'Course Units','screen-test':'NYLC Final Test','screen-results':'Results'};
+  const uLabels={u1:'Unit 1 — Communication',u2:'Unit 2 — Emails',u3:'Unit 3 — Meetings',u4:'Unit 4 — Presentations',u5:'Unit 5 — Formal Writing',u6:'Unit 6 — Negotiation',u7:'Unit 7 — Listening & Reading',u8:'Unit 8 — Business Culture'};
+  const key=id.replace('screen-','');
+  document.getElementById('nav-label').textContent=labels[id]||uLabels[key]||'';
+  window.scrollTo(0,0);
+}
+function gotoUnit(u){showScreen('screen-'+u)}
+
+function startQuiz(unit){
+  document.getElementById(unit+'-lesson').style.display='none';
+  document.getElementById(unit+'-quiz').style.display='block';
+  cQuiz=quizData[unit]; cQ=0; cScore=0; cAnswered=false; cUnit=unit;
+  renderQ(unit+'-quiz');
+}
+function renderQ(cid){
+  const el=document.getElementById(cid);
+  const q=cQuiz[cQ];
+  const ltrs=['A','B','C','D'];
+  const pct=Math.round(cQ/cQuiz.length*100);
+  el.innerHTML=`<div class="qwrap">
+    <div class="qbar">
+      <span class="qlabel">Question ${cQ+1} of ${cQuiz.length}</span>
+      <div class="qtrack"><div class="qfill" style="width:${pct}%"></div></div>
+      <span class="qbadge">Score: ${cScore}</span>
+    </div>
+    <div class="qq">${q.q}</div>
+    <div class="qopts">${q.opts.map((o,i)=>`<button class="qopt" onclick="selectA(${i},'${cid}')" id="o${i}"><span class="qltr">${ltrs[i]}</span><span>${o}</span></button>`).join('')}</div>
+    <div id="fb"></div>
+    <div class="qfoot"><button class="btn-navy" id="nxt" onclick="nextQ('${cid}')" style="display:none">${cQ===cQuiz.length-1?'See Results →':'Next →'}</button></div>
+  </div>`;
+}
+function selectA(idx,cid){
+  if(cAnswered)return; cAnswered=true;
+  const q=cQuiz[cQ];
+  document.querySelectorAll('.qopt').forEach((b,i)=>{b.disabled=true;if(i===q.ans)b.classList.add('correct');else if(i===idx)b.classList.add('wrong')});
+  if(idx===q.ans)cScore++;
+  const fb=document.getElementById('fb');
+  fb.className='qfb '+(idx===q.ans?'correct':'wrong');
+  fb.innerHTML=idx===q.ans?`✓ Correct — ${q.exp}`:`✗ Correct answer: ${q.opts[q.ans]}. ${q.exp}`;
+  document.getElementById('nxt').style.display='inline-block';
+}
+function nextQ(cid){cQ++;cAnswered=false;cQ>=cQuiz.length?showQuizDone(cid):renderQ(cid)}
+function showQuizDone(cid){
+  const el=document.getElementById(cid);
+  const pct=Math.round(cScore/cQuiz.length*100);
+  const pass=pct>=60;
+  el.innerHTML=`<div class="qwrap"><div class="qdone">
+    <div class="de">${pass?'🎉':'📚'}</div>
+    <h3>${cScore} / ${cQuiz.length}</h3>
+    <p>${pct}% — ${pass?'Excellent result! Move on to the next unit.':'Review the lesson and try again to build confidence.'}</p>
+    <div class="row" style="justify-content:center;gap:12px">
+      <button class="btn-ghost" onclick="retryQ('${cid}')">Retry Quiz</button>
+      <button class="btn-navy" onclick="markDone('${cid}')">Complete Unit →</button>
+    </div>
+  </div></div>`;
+}
+function retryQ(cid){cQ=0;cScore=0;cAnswered=false;renderQ(cid)}
+function markDone(cid){
+  const u=cid.replace('-quiz','');
+  completedUnits.add(u);
+  document.getElementById('d-'+u).style.display='inline-block';
+  updateProg(); showScreen('screen-units');
+}
+
+// ── WRITING & SPEAKING Q BANKS (2 pts each = 20 pts per part) ──
+const writingQs=[
+  {q:"You are writing a formal letter to a client whose name you know. Which sign-off is correct?",opts:["Yours faithfully,","Kind of regards,","Yours sincerely,","Best wishes and regards,"],ans:2,exp:"'Yours sincerely' is used when you know the recipient's name and have addressed them by it in the salutation."},
+  {q:"Which of the following is the correct order of a formal business letter?",opts:["Salutation → Heading → Body → Inside address → Signature","Heading → Inside address → Salutation → Body → Signature","Body → Heading → Salutation → Inside address → Signature","Inside address → Body → Heading → Salutation → Signature"],ans:1,exp:"The correct sequence is: Heading (your address + date) → Inside address → Salutation → Body → Signature."},
+  {q:"Which opening sentence is most appropriate for a formal business letter?",opts:["Hey, just wanted to touch base about the contract.","I am writing with regard to the contract discussed at our meeting on 5th May.","So basically I need to talk about the contract.","The contract — we need to sort it out."],ans:1,exp:"Formal letters open with a clear, precise statement of purpose using appropriate register."},
+  {q:"A memo is best described as:",opts:["A legal document for external partners","An informal text message between colleagues","An internal written communication within an organisation","A marketing brochure for clients"],ans:2,exp:"A memorandum (memo) is a concise internal document used to communicate information within a company."},
+  {q:"Which sentence uses appropriately formal language for a business report?",opts:["Things went really badly last quarter.","The Q3 figures were a total mess.","Performance declined significantly in Q3, falling 18% below projected targets.","Q3 was not great, to be honest."],ans:2,exp:"Formal reports use precise, objective language — no contractions, no colloquial expressions."},
+  {q:"In a business report, which section presents the writer's suggested next steps?",opts:["Introduction","Findings","Executive Summary","Recommendations"],ans:3,exp:"The Recommendations section proposes specific actions based on the evidence and conclusions of the report."},
+  {q:"Which phrase correctly hedges uncertainty in a formal report?",opts:["It is definitely true that sales will recover.","Sales will obviously go up next year.","The evidence suggests that sales may recover in Q2.","We know for certain that profits will rise."],ans:2,exp:"Hedging language ('suggests', 'may', 'appears') is essential in formal writing when certainty cannot be guaranteed."},
+  {q:"What is the purpose of an executive summary?",opts:["A detailed section for financial data only","A brief overview at the start, written for readers who may not read the full document","The final conclusion section","A glossary of technical terms"],ans:1,exp:"An executive summary gives busy decision-makers the key findings and recommendations at a glance."},
+  {q:"Which letter salutation is correct when you do NOT know the recipient's name?",opts:["Dear Friend,","Dear Mr/Ms Unknown,","Dear Sir or Madam,","To The Manager,"],ans:2,exp:"'Dear Sir or Madam,' is the standard formal salutation when the recipient's identity is unknown."},
+  {q:"Which of these is an example of an appropriate paragraph opening in a formal complaint letter?",opts:["I am absolutely furious about what happened!","I am writing to draw your attention to a matter that requires your urgent consideration.","This is unacceptable and you should be ashamed.","Just so you know, things went wrong."],ans:1,exp:"Formal complaint letters maintain a professional, measured tone even when expressing dissatisfaction."}
+];
+
+const speakingQs=[
+  {q:"What is the primary purpose of a 'hook' at the opening of a business presentation?",opts:["To list all the slides in the deck","To immediately capture the audience's attention and make them want to listen","To thank the audience for attending","To state the presenter's job title"],ans:1,exp:"A hook — a bold question, striking statistic, or surprising fact — creates immediate engagement before the main content begins."},
+  {q:"Which signposting phrase correctly signals a transition to the next point?",opts:["Anyway...","So yeah, moving on...","This brings me to my next point, which concerns...","I forgot what I was going to say, but..."],ans:2,exp:"Signposting language guides the audience through the presentation structure clearly and professionally."},
+  {q:"What is the recommended speaking pace for a clear business presentation?",opts:["200+ words per minute — faster is more efficient","50 words per minute — very slow for clarity","120–140 words per minute — natural and easy to follow","As fast as the material allows"],ans:2,exp:"120–140 words per minute allows the audience to process information comfortably without losing attention."},
+  {q:"Which phrase is most effective for concluding a business presentation?",opts:["That's it from me, I guess.","OK I'm done now.","To sum up, the three key takeaways from today are...","I'll stop there because we're running out of time."],ans:2,exp:"A strong conclusion deliberately recaps the key messages and signals a confident, purposeful close."},
+  {q:"During a Q&A, an audience member asks a question you do not know the answer to. What is the most professional response?",opts:["Make up an answer confidently","Ignore the question and move on","That's a great question — I don't have that figure to hand, but I'll follow up with you by email.","Tell them the question is irrelevant."],ans:2,exp:"Acknowledging a question you cannot answer and committing to a follow-up is professional and builds credibility."},
+  {q:"What does 'vary your tone and volume' mean in the context of presentation delivery?",opts:["Shout at the audience to emphasise key points","Change the pitch and loudness of your voice to maintain interest and highlight important ideas","Whisper to create mystery","Speak in a flat, even tone throughout for consistency"],ans:1,exp:"Varying vocal delivery keeps the audience engaged and helps them identify which points are most important."},
+  {q:"Which of the following is the best way to refer to a data slide during a presentation?",opts:["Here's a slide.","Look at this.","As you can see from this chart, sales grew by 22% in Q3...","This is some data for you."],ans:2,exp:"Effective visual references integrate the data into the narrative with a specific, informative comment."},
+  {q:"What is the best strategy if you lose your place during a presentation?",opts:["Apologise repeatedly until you remember","Leave the room","Pause calmly, glance at your notes, and continue — a brief pause reads as confidence","Laugh and say you forgot everything"],ans:2,exp:"A composed pause is far more professional than panic. Audiences rarely notice brief pauses and often read them as thoughtfulness."},
+  {q:"Which phrase correctly opens a business presentation to a mixed professional audience?",opts:["Hey everyone, let's get into it.","Good morning. My name is [Name], and today I'd like to talk to you about a challenge facing every business in this room.","Alright guys, here we go.","So... I have some slides prepared."],ans:1,exp:"A professional opening introduces the speaker, addresses the audience respectfully, and immediately establishes relevance."},
+  {q:"Eye contact during a presentation should be:",opts:["Fixed on one friendly face in the audience throughout","Avoided — look at the screen or your notes","Distributed across the room, moving naturally between different people","Directed only at the most senior person present"],ans:2,exp:"Distributed eye contact creates connection with the whole audience and prevents the presentation from feeling one-sided."}
+];
+
+// All 40 final questions in order: 10 listen + 5 read + 10 write + 10 speak (but we split scoring)
+const allFinalQs=[...listenQs,...readingQs,...writingQs,...speakingQs];
+
+// Part boundaries (question indices, 0-based)
+const PARTS={
+  listen:{start:0,end:9,max:10,label:'Part I — Listening Comprehension',intro:'Listen to the NPR Planet Money audio above, then answer the questions below.'},
+  read:  {start:10,end:14,max:10,label:'Part II — Reading Comprehension',intro:'Answer based on the business article about employee motivation and retention.'},
+  write: {start:15,end:24,max:20,label:'Part III — Writing Skills',intro:'Select the best answer for each business writing scenario. Each correct answer is worth 2 points.'},
+  speak: {start:25,end:34,max:20,label:'Part IV — Speaking & Presentation Skills',intro:'Select the best answer for each presentation and speaking scenario. Each correct answer is worth 2 points.'}
+};
+
+function getPartForQ(i){
+  if(i<=9)return 'listen';
+  if(i<=14)return 'read';
+  if(i<=24)return 'write';
+  return 'speak';
+}
+
+// ── FINAL TEST ──
+function startFinalTest(){
+  fQ=0;fScore=0;fAnswered=false;partScores={listen:0,read:0,write:0,speak:0};
+  const el=document.getElementById('final-test-content');
+  el.innerHTML=`
+    <div class="test-part-header" id="tph"></div>
+    <div id="fqa"></div>`;
+  renderFQ();
+}
+
+function renderFQ(){
+  const area=document.getElementById('fqa');
+  if(!area)return;
+  if(fQ>=allFinalQs.length){showFinalResults();return}
+
+  const q=allFinalQs[fQ];
+  const ltrs=['A','B','C','D'];
+  const part=getPartForQ(fQ);
+  const pdata=PARTS[part];
+  const totalQ=allFinalQs.length;
+  const pct=Math.round(fQ/totalQ*100);
+
+  // Show part header when part changes
+  const tph=document.getElementById('tph');
+  const partLabel=part+'-shown';
+  if(!document.getElementById(partLabel)){
+    const div=document.createElement('div');
+    div.id=partLabel;
+    div.style.cssText='margin-bottom:20px';
+    div.innerHTML=`<div class="divider" style="${fQ===0?'display:none':''}"></div>
+      <div style="font-family:\'Cormorant Garamond\',serif;font-size:24px;font-weight:600;color:var(--navy-dk);margin-bottom:5px">${pdata.label}</div>
+      <p style="font-size:14px;color:var(--tl);margin-bottom:4px">${pdata.intro}</p>
+      ${(part==='write'||part==='speak')?'<p style="font-size:13px;color:var(--gold-dk);font-weight:500;margin-bottom:16px">Each correct answer = 2 points · 10 questions · 20 points total</p>':'<div style="margin-bottom:16px"></div>'}`;
+    area.before(div);
+  }
+
+  // Running score display
+  const ls=Math.min(fScore,10);
+  const rs=Math.max(0,Math.min(fScore-10,5))*2;
+  const ws=Math.max(0,Math.min(fScore-15,10))*2;
+  const ss=Math.max(0,Math.min(fScore-25,10))*2;
+  const dispScore=ls+rs+ws+ss;
+
+  area.innerHTML=`<div class="qwrap">
+    <div class="qbar">
+      <span class="qlabel">Q${fQ+1} / ${totalQ}</span>
+      <div class="qtrack"><div class="qfill" style="width:${pct}%"></div></div>
+      <span class="qbadge">Score: ${dispScore} / 60</span>
+    </div>
+    <div class="qq">${q.q}</div>
+    <div class="qopts">${q.opts.map((o,i)=>`<button class="qopt" onclick="selectF(${i})" id="fo${i}"><span class="qltr">${ltrs[i]}</span><span>${o}</span></button>`).join('')}</div>
+    <div id="ffb"></div>
+    <div class="qfoot"><button class="btn-navy" id="fnxt" onclick="nextFQ()" style="display:none">${fQ===allFinalQs.length-1?'See Final Results →':'Next →'}</button></div>
+  </div>`;
+}
+
+function selectF(idx){
+  if(fAnswered)return; fAnswered=true;
+  const q=allFinalQs[fQ];
+  const part=getPartForQ(fQ);
+  document.querySelectorAll('.qopt').forEach((b,i)=>{
+    b.disabled=true;
+    if(i===q.ans)b.classList.add('correct');
+    else if(i===idx)b.classList.add('wrong');
+  });
+  if(idx===q.ans){fScore++;partScores[part]++;}
+  const pts=(part==='write'||part==='speak')?' (+2 pts)':' (+1 pt)';
+  const fb=document.getElementById('ffb');
+  fb.className='qfb '+(idx===q.ans?'correct':'wrong');
+  fb.innerHTML=idx===q.ans
+    ?`✓ Correct${pts} — ${q.exp}`
+    :`✗ Correct answer: ${q.opts[q.ans]}. ${q.exp}`;
+  document.getElementById('fnxt').style.display='inline-block';
+}
+
+function nextFQ(){fQ++;fAnswered=false;renderFQ()}
+
+function showFinalResults(){
+  const area=document.getElementById('fqa');
+
+  // Calculate per-part scores
+  const listenRaw=allFinalQs.slice(0,10).reduce((acc,q,i)=>acc,0); // counted in fScore
+  // We need per-part correct counts — recount from fScore tracking
+  // Since we can't replay, approximate from fScore distribution
+  // Actually we tracked fScore as running count so compute from boundaries
+  // We'll pass fScore and let showFullResults decompose it
+  const pct=Math.round(fScore/allFinalQs.length*100);
+
+  area.innerHTML=`<div class="qwrap"><div class="qdone">
+    <div class="de">🎉</div>
+    <h3>Test Complete!</h3>
+    <p>You answered ${fScore} out of ${allFinalQs.length} questions correctly across all four parts.</p>
+    <div class="row" style="justify-content:center;gap:12px">
+      <button class="btn-ghost" onclick="startFinalTest()">Retake Test</button>
+      <button class="btn-navy" onclick="showFullResults()">View Full Results →</button>
+    </div>
+  </div></div>`;
+}
+
+// Store per-part scores globally as questions are answered
+let partScores={listen:0,read:0,write:0,speak:0};
+
+function showFullResults(){
+  // Recalculate from partScores
+  const ls=partScores.listen;          // out of 10
+  const rs=partScores.read*2;          // out of 10
+  const ws=partScores.write*2;         // out of 20
+  const ss=partScores.speak*2;         // out of 20
+  const total=ls+rs+ws+ss;
+
+  const arc=301*(1-total/60);
+  document.getElementById('score-arc').setAttribute('stroke-dashoffset',arc.toFixed(1));
+  document.getElementById('final-score').textContent=total;
+
+  const pillClass=n=>n>=70?'pg':n>=50?'pm':'pr';
+
+  document.getElementById('r-listen').textContent=ls+' / 10';
+  document.getElementById('r-listen').className='pill '+pillClass(ls/10*100);
+  document.getElementById('r-read').textContent=rs+' / 10';
+  document.getElementById('r-read').className='pill '+pillClass(rs/10*100);
+  document.getElementById('r-write').textContent=ws+' / 20';
+  document.getElementById('r-write').className='pill '+pillClass(ws/20*100);
+  document.getElementById('r-speak').textContent=ss+' / 20';
+  document.getElementById('r-speak').className='pill '+pillClass(ss/20*100);
+
+  const pass=total>=42;
+  document.getElementById('verdict-title').textContent=pass?'Pass — Well done!':'Not yet — keep practising';
+  document.getElementById('verdict-title').style.color=pass?'var(--grn)':'var(--red)';
+  document.getElementById('verdict-desc').textContent=pass
+    ?'You have demonstrated strong Business English competency across all four tested areas.'
+    :'Review the relevant units and focus on your weaker areas before retaking the test.';
+  showScreen('screen-results');
+}
+function updateProg(){
+  const p=Math.min(100,Math.round(completedUnits.size/8*100));
+  document.getElementById('prog-fill').style.width=p+'%';
+  document.getElementById('prog-pct').textContent=p+'%';
+}
+function restartCourse(){completedUnits.clear();updateProg();showScreen('screen-home')}
+</script>
+</body>
+</html>
