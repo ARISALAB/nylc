@@ -1,1 +1,1053 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NYLC Business English Course</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #2B5590;
+  --navy-dark: #1e3d6b;
+  --navy-light: #d6e2f2;
+  --navy-xlight: #edf3fc;
+  --gold: #9E7F3A;
+  --gold-dark: #7a6029;
+  --gold-light: #f0e8d0;
+  --gold-xlight: #faf6ec;
+  --white: #ffffff;
+  --off-white: #f8f7f4;
+  --text: #1a1a2e;
+  --text-muted: #5a5a72;
+  --text-light: #8a8aa0;
+  --border: #ddd9d0;
+  --border-light: #eeebe5;
+  --green: #2d7d5a;
+  --green-light: #e5f4ed;
+  --red: #c0392b;
+  --red-light: #fdecea;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --shadow-sm: 0 1px 4px rgba(43,85,144,0.08);
+  --shadow-md: 0 4px 20px rgba(43,85,144,0.12);
+}
 
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Source Sans 3',sans-serif;
+  background:#f4f2ee;
+  color:var(--text);
+  min-height:100vh;
+  font-size:15px;
+  line-height:1.6;
+}
+
+/* ─── LAYOUT ─── */
+.shell{max-width:820px;margin:0 auto;padding:0 20px 80px}
+
+/* ─── TOPBAR ─── */
+.topbar{
+  background:var(--navy);
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 24px;
+  height:60px;
+  position:sticky;top:0;z-index:100;
+  box-shadow:0 2px 12px rgba(0,0,0,0.2);
+}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.logo-mark{
+  width:36px;height:36px;
+  display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;
+  border-radius:4px;overflow:hidden;
+  border:1.5px solid rgba(255,255,255,0.3);
+}
+.logo-mark .q1{background:var(--navy-dark);display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;color:white;font-family:'Playfair Display',serif}
+.logo-mark .q2{background:var(--gold);display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;color:white;font-family:'Playfair Display',serif}
+.logo-mark .q3{background:var(--gold);display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;color:white;font-family:'Playfair Display',serif}
+.logo-mark .q4{background:var(--navy-dark);display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;color:white;font-family:'Playfair Display',serif}
+.logo-text{font-family:'Playfair Display',serif;font-size:15px;font-weight:500;color:white;letter-spacing:0.3px}
+.logo-text span{color:var(--gold-light);font-size:11px;display:block;font-family:'Source Sans 3',sans-serif;font-weight:300;letter-spacing:1px;text-transform:uppercase}
+.nav-progress{display:flex;align-items:center;gap:10px}
+.nav-prog-label{font-size:12px;color:rgba(255,255,255,0.7);white-space:nowrap}
+.prog-bar{width:100px;height:3px;background:rgba(255,255,255,0.2);border-radius:2px;overflow:hidden}
+.prog-fill{height:100%;background:var(--gold);border-radius:2px;transition:width 0.5s ease}
+.prog-pct{font-size:12px;color:var(--gold-light);font-weight:500;min-width:28px}
+
+/* ─── SCREENS ─── */
+.screen{display:none;padding-top:32px;animation:fadeIn 0.3s ease}
+.screen.active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+/* ─── HERO ─── */
+.hero-banner{
+  background:var(--navy);
+  border-radius:var(--radius-lg);
+  padding:48px 40px;
+  margin-bottom:24px;
+  position:relative;
+  overflow:hidden;
+}
+.hero-banner::before{
+  content:'';position:absolute;top:-40px;right:-40px;
+  width:220px;height:220px;
+  background:var(--gold);opacity:0.08;
+  border-radius:50%;
+}
+.hero-banner::after{
+  content:'';position:absolute;bottom:-60px;left:60px;
+  width:160px;height:160px;
+  background:var(--gold);opacity:0.06;
+  border-radius:50%;
+}
+.hero-badge{
+  display:inline-block;
+  background:var(--gold);
+  color:white;
+  font-size:11px;font-weight:600;
+  padding:4px 14px;border-radius:20px;
+  margin-bottom:18px;
+  letter-spacing:0.8px;text-transform:uppercase;
+}
+.hero-banner h1{
+  font-family:'Playfair Display',serif;
+  font-size:34px;font-weight:700;
+  color:white;line-height:1.2;
+  margin-bottom:14px;
+}
+.hero-banner p{
+  font-size:15px;color:rgba(255,255,255,0.75);
+  max-width:500px;line-height:1.7;margin-bottom:28px;
+}
+.stats-row{display:flex;gap:24px;flex-wrap:wrap;margin-bottom:28px}
+.stat-item{text-align:center}
+.stat-num{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--gold-light)}
+.stat-label{font-size:11px;color:rgba(255,255,255,0.6);text-transform:uppercase;letter-spacing:0.5px}
+
+/* ─── BUTTONS ─── */
+.btn-primary{
+  background:var(--gold);color:white;
+  border:none;padding:12px 28px;
+  border-radius:var(--radius-sm);
+  font-size:14px;font-weight:600;
+  cursor:pointer;transition:all 0.2s;
+  font-family:'Source Sans 3',sans-serif;
+  letter-spacing:0.2px;
+}
+.btn-primary:hover{background:var(--gold-dark);transform:translateY(-1px);box-shadow:0 4px 12px rgba(158,127,58,0.35)}
+.btn-primary:active{transform:scale(0.98)}
+.btn-navy{
+  background:var(--navy);color:white;
+  border:none;padding:12px 28px;
+  border-radius:var(--radius-sm);
+  font-size:14px;font-weight:600;
+  cursor:pointer;transition:all 0.2s;
+  font-family:'Source Sans 3',sans-serif;
+}
+.btn-navy:hover{background:var(--navy-dark)}
+.btn-ghost{
+  background:transparent;color:var(--navy);
+  border:1.5px solid var(--border);
+  padding:11px 24px;border-radius:var(--radius-sm);
+  font-size:14px;font-weight:500;cursor:pointer;
+  transition:all 0.2s;font-family:'Source Sans 3',sans-serif;
+}
+.btn-ghost:hover{border-color:var(--navy);background:var(--navy-xlight)}
+
+/* ─── MODULE CARDS ─── */
+.modules-grid{display:grid;gap:14px;margin-bottom:28px}
+.module-card{
+  background:white;
+  border:1px solid var(--border-light);
+  border-radius:var(--radius-lg);
+  padding:20px 24px;
+  cursor:pointer;
+  transition:all 0.2s;
+  display:flex;align-items:flex-start;gap:18px;
+  box-shadow:var(--shadow-sm);
+}
+.module-card:hover{border-color:var(--navy);transform:translateY(-2px);box-shadow:var(--shadow-md)}
+.module-card.completed{border-left:4px solid var(--green)}
+.mod-icon{
+  width:52px;height:52px;
+  border-radius:var(--radius-md);
+  display:flex;align-items:center;justify-content:center;
+  font-size:22px;flex-shrink:0;
+}
+.mod-info{flex:1}
+.mod-info h3{font-size:15px;font-weight:600;color:var(--text);margin-bottom:4px}
+.mod-info p{font-size:13px;color:var(--text-muted);line-height:1.5}
+.mod-meta{display:flex;gap:8px;margin-top:8px;flex-wrap:wrap}
+.tag{display:inline-block;font-size:11px;font-weight:600;padding:3px 10px;border-radius:12px;letter-spacing:0.3px}
+.tag-navy{background:var(--navy-xlight);color:var(--navy)}
+.tag-gold{background:var(--gold-xlight);color:var(--gold-dark)}
+.tag-green{background:var(--green-light);color:var(--green)}
+.mod-arrow{color:var(--text-light);font-size:18px;margin-left:auto;align-self:center}
+
+/* ─── LESSON SCREENS ─── */
+.lesson-header{margin-bottom:24px}
+.breadcrumb{font-size:12px;color:var(--text-light);margin-bottom:8px;display:flex;align-items:center;gap:6px}
+.breadcrumb a{color:var(--navy);text-decoration:none;cursor:pointer}
+.breadcrumb a:hover{text-decoration:underline}
+.lesson-header h2{
+  font-family:'Playfair Display',serif;
+  font-size:28px;font-weight:700;
+  color:var(--navy);line-height:1.2;margin-bottom:6px;
+}
+.lesson-header p{font-size:14px;color:var(--text-muted)}
+
+.content-block{
+  background:white;
+  border:1px solid var(--border-light);
+  border-radius:var(--radius-lg);
+  padding:22px 24px;
+  margin-bottom:16px;
+  box-shadow:var(--shadow-sm);
+}
+.content-block.accent-navy{border-left:4px solid var(--navy)}
+.content-block.accent-gold{border-left:4px solid var(--gold)}
+.content-block.accent-green{border-left:4px solid var(--green)}
+.content-block h4{
+  font-size:11px;font-weight:600;
+  text-transform:uppercase;letter-spacing:0.8px;
+  color:var(--navy);margin-bottom:12px;
+}
+.content-block.accent-gold h4{color:var(--gold-dark)}
+.content-block.accent-green h4{color:var(--green)}
+.content-block p{font-size:14px;line-height:1.7;color:var(--text)}
+
+.vocab-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin:12px 0}
+.vocab-item{
+  background:var(--off-white);border:1px solid var(--border-light);
+  border-radius:var(--radius-sm);padding:10px 14px;
+}
+.vocab-term{font-weight:600;font-size:13px;color:var(--navy);margin-bottom:2px}
+.vocab-def{font-size:12px;color:var(--text-muted);line-height:1.4}
+
+.audio-card{
+  background:var(--navy);
+  border-radius:var(--radius-lg);
+  padding:20px 24px;
+  display:flex;align-items:center;gap:16px;
+  margin:16px 0;
+  box-shadow:var(--shadow-md);
+}
+.play-btn{
+  width:44px;height:44px;border-radius:50%;
+  background:var(--gold);border:none;
+  cursor:pointer;display:flex;align-items:center;justify-content:center;
+  color:white;font-size:16px;flex-shrink:0;
+  transition:transform 0.15s;
+}
+.play-btn:hover{transform:scale(1.08)}
+.audio-info{flex:1}
+.audio-title{font-size:14px;font-weight:600;color:white}
+.audio-sub{font-size:12px;color:rgba(255,255,255,0.6);margin-top:2px}
+.audio-link{font-size:12px;font-weight:600;color:var(--gold-light);text-decoration:none;padding:6px 14px;border:1px solid rgba(158,127,58,0.4);border-radius:20px;white-space:nowrap;transition:background 0.15s}
+.audio-link:hover{background:rgba(158,127,58,0.15)}
+
+/* ─── QUIZ ─── */
+.quiz-wrap{background:white;border:1px solid var(--border-light);border-radius:var(--radius-lg);padding:28px;box-shadow:var(--shadow-sm)}
+.q-counter-bar{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
+.q-counter{font-size:12px;color:var(--text-light);font-weight:500}
+.q-mini-prog{flex:1;margin:0 16px;height:3px;background:var(--border-light);border-radius:2px;overflow:hidden}
+.q-mini-fill{height:100%;background:var(--gold);border-radius:2px;transition:width 0.4s}
+.q-score-badge{background:var(--navy-xlight);color:var(--navy);font-size:12px;font-weight:600;padding:3px 10px;border-radius:12px}
+.quiz-q{font-family:'Playfair Display',serif;font-size:18px;font-weight:500;color:var(--text);line-height:1.4;margin-bottom:20px}
+.quiz-options{display:grid;gap:10px;margin-bottom:20px}
+.opt-btn{
+  background:var(--off-white);border:1.5px solid var(--border);
+  border-radius:var(--radius-md);padding:14px 16px;
+  text-align:left;cursor:pointer;font-size:14px;line-height:1.5;
+  transition:all 0.15s;display:flex;align-items:flex-start;gap:12px;
+  font-family:'Source Sans 3',sans-serif;color:var(--text);
+}
+.opt-btn:hover:not(:disabled){border-color:var(--navy);background:var(--navy-xlight)}
+.opt-btn.correct{background:var(--green-light);border-color:var(--green);color:var(--green)}
+.opt-btn.wrong{background:var(--red-light);border-color:var(--red);color:var(--red)}
+.opt-letter{
+  width:24px;height:24px;border-radius:50%;
+  background:white;border:1.5px solid var(--border);
+  display:flex;align-items:center;justify-content:center;
+  font-size:11px;font-weight:700;flex-shrink:0;margin-top:1px;color:var(--text-muted);
+}
+.opt-btn.correct .opt-letter{background:var(--green);border-color:var(--green);color:white}
+.opt-btn.wrong .opt-letter{background:var(--red);border-color:var(--red);color:white}
+.feedback{padding:12px 16px;border-radius:var(--radius-md);margin-bottom:16px;font-size:14px;font-weight:500}
+.feedback.correct{background:var(--green-light);color:var(--green)}
+.feedback.wrong{background:var(--red-light);color:var(--red)}
+.quiz-actions{display:flex;justify-content:flex-end}
+
+/* ─── WRITING ─── */
+.prompt-card{
+  background:var(--gold-xlight);
+  border:1px solid #e0d4b0;border-left:4px solid var(--gold);
+  border-radius:var(--radius-md);padding:18px 20px;margin-bottom:18px;
+}
+.prompt-card .prompt-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:var(--gold-dark);margin-bottom:8px}
+.prompt-card p{font-size:14px;line-height:1.7;color:var(--text)}
+.parts-strip{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.part-chip{
+  font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;
+  border:1.5px solid var(--border);color:var(--text-muted);cursor:pointer;
+  transition:all 0.15s;background:white;
+}
+.part-chip:hover{border-color:var(--navy);color:var(--navy)}
+.part-chip.used{background:var(--navy);color:white;border-color:var(--navy)}
+.letter-textarea{
+  width:100%;min-height:260px;
+  border:1.5px solid var(--border);border-radius:var(--radius-md);
+  padding:16px;font-size:14px;line-height:1.8;
+  font-family:'Source Sans 3',sans-serif;color:var(--text);
+  background:white;resize:vertical;
+  transition:border-color 0.15s;
+}
+.letter-textarea:focus{outline:none;border-color:var(--navy)}
+.template-preview{
+  background:white;border:1px solid var(--border-light);
+  border-radius:var(--radius-md);padding:20px;
+  font-size:13px;line-height:2.1;color:var(--text-muted);
+  margin-bottom:16px;
+}
+.template-preview .tpl-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:var(--gold-dark);margin-bottom:10px}
+.template-preview em{color:var(--navy);font-style:normal;font-weight:500}
+
+/* ─── SPEAKING ─── */
+.invention-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:20px}
+.inv-card{
+  background:white;border:1.5px solid var(--border);
+  border-radius:var(--radius-lg);padding:20px;cursor:pointer;
+  transition:all 0.2s;text-align:center;
+  box-shadow:var(--shadow-sm);
+}
+.inv-card:hover{border-color:var(--navy);transform:translateY(-2px);box-shadow:var(--shadow-md)}
+.inv-card.selected{border-color:var(--navy);border-width:2px;background:var(--navy-xlight)}
+.inv-emoji{font-size:38px;margin-bottom:10px}
+.inv-name{font-size:14px;font-weight:600;color:var(--navy);margin-bottom:4px}
+.inv-desc{font-size:12px;color:var(--text-muted);line-height:1.4}
+.outline-card{
+  background:white;border:1px solid var(--border-light);
+  border-radius:var(--radius-lg);padding:24px;
+  box-shadow:var(--shadow-sm);
+}
+.outline-card h4{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:var(--text-light);margin-bottom:16px}
+.outline-step{
+  display:flex;gap:14px;padding:12px 0;
+  border-bottom:1px solid var(--border-light);
+}
+.outline-step:last-child{border-bottom:none}
+.step-num{
+  width:26px;height:26px;border-radius:50%;
+  background:var(--navy);color:white;
+  display:flex;align-items:center;justify-content:center;
+  font-size:12px;font-weight:700;flex-shrink:0;margin-top:1px;
+}
+.step-body{flex:1;font-size:14px;line-height:1.6;color:var(--text)}
+.step-body strong{color:var(--navy)}
+.tips-list{list-style:none;display:grid;gap:8px;margin:16px 0}
+.tips-list li{
+  font-size:13px;padding:10px 14px;
+  background:var(--off-white);border-left:3px solid var(--gold);
+  border-radius:0 var(--radius-sm) var(--radius-sm) 0;
+  line-height:1.5;color:var(--text);
+}
+
+/* ─── FINAL TEST ─── */
+.test-header{
+  background:var(--navy);color:white;
+  border-radius:var(--radius-lg);
+  padding:28px 32px;margin-bottom:20px;
+}
+.test-header h2{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;margin-bottom:6px}
+.test-header p{font-size:13px;color:rgba(255,255,255,0.7)}
+.test-parts-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px}
+.test-part{
+  background:white;border:1px solid var(--border-light);
+  border-radius:var(--radius-md);padding:16px 18px;
+  box-shadow:var(--shadow-sm);
+}
+.test-part .part-num{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;margin-bottom:6px}
+.test-part h4{font-size:14px;font-weight:600;color:var(--text);margin-bottom:2px}
+.test-part p{font-size:12px;color:var(--text-muted)}
+.scoring-note{
+  background:var(--gold-xlight);border:1px solid #ddd0a0;
+  border-radius:var(--radius-md);padding:14px 18px;margin-bottom:20px;
+  font-size:13px;line-height:1.6;color:var(--text);
+}
+
+/* ─── RESULTS ─── */
+.cert-banner{
+  background:var(--navy);color:white;
+  border-radius:var(--radius-lg);padding:32px;
+  text-align:center;margin-bottom:20px;
+  position:relative;overflow:hidden;
+}
+.cert-banner::before{content:'';position:absolute;top:-30px;right:-30px;width:140px;height:140px;background:var(--gold);opacity:0.1;border-radius:50%}
+.cert-banner h2{font-family:'Playfair Display',serif;font-size:24px;font-weight:700;margin-bottom:4px}
+.cert-banner p{font-size:13px;color:rgba(255,255,255,0.7)}
+.score-display{display:flex;align-items:center;justify-content:center;gap:32px;background:white;border:1px solid var(--border-light);border-radius:var(--radius-lg);padding:28px;margin-bottom:16px;box-shadow:var(--shadow-sm)}
+.score-ring-wrap{text-align:center}
+.score-ring-wrap .big-num{font-family:'Playfair Display',serif;font-size:42px;font-weight:700;color:var(--navy);line-height:1}
+.score-ring-wrap .big-sub{font-size:12px;color:var(--text-muted);margin-top:2px}
+.score-verdict{flex:1}
+.score-verdict .verdict-title{font-size:18px;font-weight:600;color:var(--green);margin-bottom:6px}
+.score-verdict .verdict-desc{font-size:14px;color:var(--text-muted);line-height:1.6}
+.breakdown{display:grid;gap:10px;margin-bottom:20px}
+.breakdown-row{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:12px 18px;background:white;border:1px solid var(--border-light);
+  border-radius:var(--radius-md);box-shadow:var(--shadow-sm);
+}
+.breakdown-row .sec-name{font-size:14px;font-weight:500;color:var(--text)}
+.score-pill{font-size:13px;font-weight:600;padding:3px 12px;border-radius:12px}
+.sp-good{background:var(--green-light);color:var(--green)}
+.sp-mid{background:var(--gold-xlight);color:var(--gold-dark)}
+
+/* ─── QUIZ COMPLETE ─── */
+.quiz-done{text-align:center;padding:32px 20px}
+.quiz-done .big-emoji{font-size:52px;margin-bottom:12px}
+.quiz-done h3{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:var(--navy);margin-bottom:6px}
+.quiz-done p{font-size:14px;color:var(--text-muted);margin-bottom:24px}
+
+/* ─── UTILS ─── */
+.flex-row{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.spacer{flex:1}
+.divider{height:1px;background:var(--border-light);margin:20px 0}
+.section-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:var(--gold-dark);margin-bottom:12px}
+.screen-title{font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:var(--navy);margin-bottom:4px}
+.screen-sub{font-size:14px;color:var(--text-muted);margin-bottom:20px}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a class="logo" onclick="showScreen('screen-home')" style="cursor:pointer">
+    <div class="logo-mark">
+      <div class="q1">N</div><div class="q2">Y</div>
+      <div class="q3">L</div><div class="q4">C</div>
+    </div>
+    <div class="logo-text">
+      NYLC
+      <span>Business English</span>
+    </div>
+  </a>
+  <div class="nav-progress">
+    <span class="nav-prog-label" id="nav-label">Course Home</span>
+    <div class="prog-bar"><div class="prog-fill" id="prog-fill" style="width:0%"></div></div>
+    <span class="prog-pct" id="prog-pct">0%</span>
+  </div>
+</div>
+
+<div class="shell">
+
+<!-- ══════════════════════════════════ HOME ══════════════════════════════════ -->
+<div class="screen active" id="screen-home">
+  <div class="hero-banner">
+    <div class="hero-badge">Certified Preparation Programme</div>
+    <h1>Master Business English.<br>Pass the NYLC Test.</h1>
+    <p>A structured, fast-track course covering all four tested skills: listening comprehension, professional reading, formal writing, and business presentations.</p>
+    <div class="stats-row">
+      <div class="stat-item"><div class="stat-num">4</div><div class="stat-label">Modules</div></div>
+      <div class="stat-item"><div class="stat-num">30+</div><div class="stat-label">Practice items</div></div>
+      <div class="stat-item"><div class="stat-num">~90</div><div class="stat-label">Minutes</div></div>
+      <div class="stat-item"><div class="stat-num">60</div><div class="stat-label">Test points</div></div>
+    </div>
+    <button class="btn-primary" onclick="showScreen('screen-modules')" style="font-size:15px;padding:14px 36px">Begin the Course →</button>
+  </div>
+  <div class="content-block accent-gold">
+    <h4>How this course works</h4>
+    <p>Each module prepares you for one part of the NYLC Business English Test. Study the lesson, practise with quiz questions, then move to the next module. Complete all four modules before taking the full timed test.</p>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════ MODULES ══════════════════════════════════ -->
+<div class="screen" id="screen-modules">
+  <div class="screen-title">Your Learning Path</div>
+  <div class="screen-sub">Work through all four modules before taking the final NYLC test.</div>
+  <div class="modules-grid">
+    <div class="module-card" onclick="startModule('listening')">
+      <div class="mod-icon" style="background:var(--navy-xlight)">🎧</div>
+      <div class="mod-info">
+        <h3>Module 1 — Listening Comprehension</h3>
+        <p>Listen to a CEO's speech at a factory opening. Understand corporate language, infer meaning, and answer 10 NYLC-format questions.</p>
+        <div class="mod-meta">
+          <span class="tag tag-navy">25 min</span>
+          <span class="tag tag-gold">10 questions</span>
+          <span id="m1-done" style="display:none" class="tag tag-green">✓ Done</span>
+        </div>
+      </div>
+      <div class="mod-arrow">›</div>
+    </div>
+    <div class="module-card" onclick="startModule('reading')">
+      <div class="mod-icon" style="background:var(--gold-xlight)">📄</div>
+      <div class="mod-info">
+        <h3>Module 2 — Business Reading</h3>
+        <p>Read an article on employee motivation and retention. Practise skimming, scanning, and comprehension for 5 NYLC questions.</p>
+        <div class="mod-meta">
+          <span class="tag tag-navy">20 min</span>
+          <span class="tag tag-gold">5 questions</span>
+          <span id="m2-done" style="display:none" class="tag tag-green">✓ Done</span>
+        </div>
+      </div>
+      <div class="mod-arrow">›</div>
+    </div>
+    <div class="module-card" onclick="startModule('writing')">
+      <div class="mod-icon" style="background:#f0ede8">✍️</div>
+      <div class="mod-info">
+        <h3>Module 3 — Formal Business Writing</h3>
+        <p>Learn the five-part business letter structure and write a formal thank-you letter — exactly as required by the NYLC test.</p>
+        <div class="mod-meta">
+          <span class="tag tag-navy">25 min</span>
+          <span class="tag tag-gold">1 letter task</span>
+          <span id="m3-done" style="display:none" class="tag tag-green">✓ Done</span>
+        </div>
+      </div>
+      <div class="mod-arrow">›</div>
+    </div>
+    <div class="module-card" onclick="startModule('speaking')">
+      <div class="mod-icon" style="background:#f5edf0">🎤</div>
+      <div class="mod-info">
+        <h3>Module 4 — Business Presentations</h3>
+        <p>Choose a patented invention and prepare a structured 2-minute persuasive presentation for the NYLC speaking test.</p>
+        <div class="mod-meta">
+          <span class="tag tag-navy">20 min</span>
+          <span class="tag tag-gold">1 presentation</span>
+          <span id="m4-done" style="display:none" class="tag tag-green">✓ Done</span>
+        </div>
+      </div>
+      <div class="mod-arrow">›</div>
+    </div>
+  </div>
+  <div class="divider"></div>
+  <div style="text-align:center">
+    <p style="font-size:13px;color:var(--text-muted);margin-bottom:14px">Complete all modules before taking the official test</p>
+    <button class="btn-navy" onclick="showScreen('screen-finaltest')" style="font-size:15px;padding:14px 36px">Take the NYLC Final Test →</button>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════ LISTENING ══════════════════════════════════ -->
+<div class="screen" id="screen-listening">
+  <div class="lesson-header">
+    <div class="breadcrumb"><a onclick="showScreen('screen-modules')">← Modules</a> / Module 1</div>
+    <h2>Listening Comprehension</h2>
+    <p>CEO speech by Robert Innes · Talbot Engineering · Daisy Hill factory, Leeds</p>
+  </div>
+
+  <div id="listen-lesson">
+    <div class="content-block accent-navy">
+      <h4>Key Listening Strategies</h4>
+      <p>In NYLC listening tasks, focus on <strong>specific facts</strong> (figures, names, processes) and <strong>implied meaning</strong> — what can logically be inferred? Speakers often signal key ideas with phrases like <em>"What's important is..."</em> or <em>"Going forward..."</em> Listen for these cues.</p>
+    </div>
+    <div class="content-block accent-gold">
+      <h4>Essential Vocabulary</h4>
+      <div class="vocab-grid">
+        <div class="vocab-item"><div class="vocab-term">complacent</div><div class="vocab-def">too comfortable; not trying to improve</div></div>
+        <div class="vocab-item"><div class="vocab-term">joint venture</div><div class="vocab-def">a business partnership between two or more companies</div></div>
+        <div class="vocab-item"><div class="vocab-term">refurbished</div><div class="vocab-def">renovated and made new again</div></div>
+        <div class="vocab-item"><div class="vocab-term">outsourcing</div><div class="vocab-def">contracting work to an external supplier</div></div>
+        <div class="vocab-item"><div class="vocab-term">depreciation</div><div class="vocab-def">reduction in value of equipment over time</div></div>
+        <div class="vocab-item"><div class="vocab-term">to infer</div><div class="vocab-def">to conclude from evidence, not stated facts</div></div>
+      </div>
+    </div>
+    <div class="audio-card">
+      <button class="play-btn">▶</button>
+      <div class="audio-info">
+        <div class="audio-title">Robert Innes, CEO — Opening Speech at Daisy Hill</div>
+        <div class="audio-sub">Market Leader Advanced · Audio Track 6 · approx. 4 minutes</div>
+      </div>
+      <a class="audio-link" href="https://drive.google.com/file/d/0B_Afoiflb4aRXzhKOXRpTW9uZWM/view" target="_blank">Open Audio ↗</a>
+    </div>
+    <div class="content-block accent-green">
+      <h4>Listen for these topics (in sequence)</h4>
+      <p>1. Company history &amp; culture &nbsp;·&nbsp; 2. Employee responsibilities &nbsp;·&nbsp; 3. Customer relationships &nbsp;·&nbsp; 4. Factory visits &amp; transparency &nbsp;·&nbsp; 5. Production costs &nbsp;·&nbsp; 6. Export percentages &nbsp;·&nbsp; 7. China expansion &nbsp;·&nbsp; 8. Opportunities for Daisy Hill workers</p>
+    </div>
+    <div class="flex-row">
+      <div class="spacer"></div>
+      <button class="btn-navy" onclick="startListeningQuiz()">Practice Questions →</button>
+    </div>
+  </div>
+  <div id="listen-quiz" style="display:none"></div>
+</div>
+
+<!-- ══════════════════════════════════ READING ══════════════════════════════════ -->
+<div class="screen" id="screen-reading">
+  <div class="lesson-header">
+    <div class="breadcrumb"><a onclick="showScreen('screen-modules')">← Modules</a> / Module 2</div>
+    <h2>Business Reading</h2>
+    <p>Article on employee motivation and workforce retention strategies</p>
+  </div>
+  <div id="read-lesson">
+    <div class="content-block accent-navy">
+      <h4>Reading Strategy: Skim, Then Scan</h4>
+      <p><strong>Skim first (30–45 seconds):</strong> Read the title, the first and last sentence of each paragraph. Form a mental map of the argument. <strong>Then scan</strong> for specific information when answering — search for the key words in each option, not the whole sentence.</p>
+    </div>
+    <div class="content-block accent-gold">
+      <h4>Article Summary</h4>
+      <p>Recent research reveals that companies misunderstand what motivates employees to <em>stay</em>. While managers assume salary is the primary driver, workers rank recognition of individual achievement most highly. During the economic downturn, many accepted roles below their qualification level. Consultants such as Brian Wilkinson recommend investing in staff retention programmes. Remote and flexible working may grow in popularity, but is unlikely to become the standard permanent arrangement for most firms.</p>
+    </div>
+    <div class="content-block accent-green">
+      <h4>Vocabulary in Context</h4>
+      <div class="vocab-grid">
+        <div class="vocab-item"><div class="vocab-term">retention</div><div class="vocab-def">keeping employees within the organisation</div></div>
+        <div class="vocab-item"><div class="vocab-term">remuneration</div><div class="vocab-def">salary and financial compensation package</div></div>
+        <div class="vocab-item"><div class="vocab-term">economic downturn</div><div class="vocab-def">a period of reduced economic activity or recession</div></div>
+        <div class="vocab-item"><div class="vocab-term">conceal</div><div class="vocab-def">to hide or deliberately keep something secret</div></div>
+        <div class="vocab-item"><div class="vocab-term">invest in</div><div class="vocab-def">to allocate resources (money, time) to something</div></div>
+        <div class="vocab-item"><div class="vocab-term">permanent</div><div class="vocab-def">lasting or intended to last indefinitely</div></div>
+      </div>
+    </div>
+    <div class="flex-row"><div class="spacer"></div><button class="btn-navy" onclick="startReadingQuiz()">Practice Questions →</button></div>
+  </div>
+  <div id="read-quiz" style="display:none"></div>
+</div>
+
+<!-- ══════════════════════════════════ WRITING ══════════════════════════════════ -->
+<div class="screen" id="screen-writing">
+  <div class="lesson-header">
+    <div class="breadcrumb"><a onclick="showScreen('screen-modules')">← Modules</a> / Module 3</div>
+    <h2>Formal Business Writing</h2>
+    <p>Master the five-part structure of a professional business letter</p>
+  </div>
+  <div id="write-lesson">
+    <div class="content-block accent-navy">
+      <h4>The 5 Parts of a Business Letter</h4>
+      <p><strong>1. Heading</strong> — Your address and the date (top right or left).<br>
+      <strong>2. Inside Address</strong> — The recipient's name and full address.<br>
+      <strong>3. Salutation</strong> — Dear Mr/Ms [Surname], (formal, always with a comma).<br>
+      <strong>4. Body</strong> — Typically 3–4 paragraphs: opening purpose → main content → impact → closing.<br>
+      <strong>5. Signature</strong> — "Yours sincerely" (if you know the name) + your full name.</p>
+    </div>
+    <div class="content-block accent-gold">
+      <h4>Body Paragraph Guide</h4>
+      <p><strong>¶1 — Purpose:</strong> "I am writing to express my sincere gratitude for..."<br>
+      <strong>¶2 — The event:</strong> Describe the occasion and the gift specifically and warmly.<br>
+      <strong>¶3 — Significance:</strong> Explain what the recognition means to you personally and professionally.<br>
+      <strong>¶4 — Close:</strong> Express your continued commitment and look forward to the future.</p>
+    </div>
+    <div class="template-preview">
+      <div class="tpl-label">Letter Template</div>
+      [Your Name] &nbsp;·&nbsp; Lederer, Lederer and Hall &nbsp;·&nbsp; 407 East 23rd Street, New York, NY 10013<br>
+      [Date]<br><br>
+      Mr. Gerald Hall<br>Lederer, Lederer and Hall<br>407 East 23rd Street, New York, New York 10013<br><br>
+      Dear Mr. Hall,<br><br>
+      <em>I am writing to express my heartfelt gratitude for the wonderful party held in my honour to mark my tenth anniversary with the firm, and for the beautiful wristwatch you presented to me as a token of the company's appreciation...</em><br><br>
+      <em>[Your paragraphs — describe the event, the gift's significance, your feelings, and close warmly]</em><br><br>
+      Yours sincerely,<br>[Your Name]
+    </div>
+    <div class="content-block accent-green">
+      <h4>Useful Formal Phrases</h4>
+      <div class="vocab-grid">
+        <div class="vocab-item"><div class="vocab-term">token of appreciation</div><div class="vocab-def">a gift to show recognition or thanks</div></div>
+        <div class="vocab-item"><div class="vocab-term">on behalf of</div><div class="vocab-def">representing a group or organisation</div></div>
+        <div class="vocab-item"><div class="vocab-term">heartfelt gratitude</div><div class="vocab-def">deep and sincere thanks</div></div>
+        <div class="vocab-item"><div class="vocab-term">in my honour</div><div class="vocab-def">done to celebrate or recognise someone</div></div>
+        <div class="vocab-item"><div class="vocab-term">I remain / I look forward to</div><div class="vocab-def">formal phrases for closing paragraphs</div></div>
+        <div class="vocab-item"><div class="vocab-term">forthcoming years</div><div class="vocab-def">the years ahead; the future</div></div>
+      </div>
+    </div>
+    <button class="btn-navy" onclick="showWritingPractice()">Write Your Letter →</button>
+  </div>
+
+  <div id="write-practice" style="display:none">
+    <div class="prompt-card">
+      <div class="prompt-label">NYLC Writing Task</div>
+      <p>You have worked for the law firm <strong>Lederer, Lederer and Hall</strong>, 407 East 23rd Street, New York, NY 10013, for ten years. At a party held in your honour, Mr. Gerald Hall presents you with a wristwatch as a token of the company's appreciation. Write a formal letter to Mr. Hall thanking him and the entire company for both the party and the gift. Include and label all five parts.</p>
+    </div>
+    <div class="section-label">Mark each section as you write:</div>
+    <div class="parts-strip">
+      <span class="part-chip" onclick="insertPart(this,'[HEADING]\n')">Heading</span>
+      <span class="part-chip" onclick="insertPart(this,'\n[INSIDE ADDRESS]\n')">Inside Address</span>
+      <span class="part-chip" onclick="insertPart(this,'\n[SALUTATION]\n')">Salutation</span>
+      <span class="part-chip" onclick="insertPart(this,'\n[BODY]\n')">Body</span>
+      <span class="part-chip" onclick="insertPart(this,'\n[SIGNATURE]\n')">Signature</span>
+    </div>
+    <textarea class="letter-textarea" id="letter-area" placeholder="Begin your letter here. Tap a section label above to insert a marker, then write that section..."></textarea>
+    <div class="flex-row" style="margin-top:14px">
+      <button class="btn-ghost" onclick="checkLetter()">Check Structure</button>
+      <div class="spacer"></div>
+      <button class="btn-navy" onclick="completeWriting()">Complete Module →</button>
+    </div>
+    <div id="letter-feedback" style="margin-top:12px"></div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════ SPEAKING ══════════════════════════════════ -->
+<div class="screen" id="screen-speaking">
+  <div class="lesson-header">
+    <div class="breadcrumb"><a onclick="showScreen('screen-modules')">← Modules</a> / Module 4</div>
+    <h2>Business Presentation Skills</h2>
+    <p>Prepare and deliver a 2-minute persuasive product presentation · 20 points</p>
+  </div>
+  <div class="content-block accent-navy">
+    <h4>The NYLC Presentation Formula (2 minutes)</h4>
+    <p><strong>Hook (15s)</strong> — Open with a question, statistic, or surprising statement to grab the audience's attention.<br>
+    <strong>Introduction (15s)</strong> — Name the product and state clearly who it is designed for.<br>
+    <strong>How it works (45s)</strong> — Explain the mechanism simply, using clear signposting language.<br>
+    <strong>Benefits (30s)</strong> — Why will it improve consumers' lives? Use specific, concrete examples.<br>
+    <strong>Close (15s)</strong> — End with a memorable statement or call to action.</p>
+  </div>
+  <div class="section-label" style="margin-top:4px">Select your invention:</div>
+  <div class="invention-grid">
+    <div class="inv-card" onclick="selectInvention(this,'Redundant Recumbent')">
+      <div class="inv-emoji">🛋️</div>
+      <div class="inv-name">The Redundant Recumbent</div>
+      <div class="inv-desc">A computer desk for lying down — designed to reduce strain on the back, neck and wrists</div>
+    </div>
+    <div class="inv-card" onclick="selectInvention(this,'Insect Ball')">
+      <div class="inv-emoji">🔵</div>
+      <div class="inv-name">The Insect Ball</div>
+      <div class="inv-desc">A repellent-coated ball attached to a hat that lures insects away from the face</div>
+    </div>
+    <div class="inv-card" onclick="selectInvention(this,'Arm Mitten')">
+      <div class="inv-emoji">🧤</div>
+      <div class="inv-name">The Arm Mitten</div>
+      <div class="inv-desc">A protective sleeve for the arm while driving, guarding against sunburn</div>
+    </div>
+    <div class="inv-card" onclick="selectInvention(this,'Dumbo Bo')">
+      <div class="inv-emoji">🎩</div>
+      <div class="inv-name">The Dumbo Bo</div>
+      <div class="inv-desc">A lightweight hat flap that acts as an acoustic funnel to improve the wearer's hearing</div>
+    </div>
+  </div>
+  <div id="speaking-outline" style="display:none">
+    <div class="outline-card">
+      <h4>Your Presentation Outline — <span id="inv-name-display" style="color:var(--navy);font-style:normal"></span></h4>
+      <div class="outline-step"><div class="step-num">1</div><div class="step-body"><strong>Hook (15s):</strong> <span id="hook-text"></span></div></div>
+      <div class="outline-step"><div class="step-num">2</div><div class="step-body"><strong>Introduction (15s):</strong> State the product's name and its target user group clearly.</div></div>
+      <div class="outline-step"><div class="step-num">3</div><div class="step-body"><strong>How it works (45s):</strong> <span id="works-text"></span></div></div>
+      <div class="outline-step"><div class="step-num">4</div><div class="step-body"><strong>Benefits (30s):</strong> <span id="benefit-text"></span></div></div>
+      <div class="outline-step"><div class="step-num">5</div><div class="step-body"><strong>Close (15s):</strong> "Try it once and you will never go back. Available now — because you deserve to work smarter."</div></div>
+    </div>
+    <ul class="tips-list" style="margin-top:16px">
+      <li>Speak at 120–140 words per minute — not too fast, not too slow</li>
+      <li>Use signposting language: "First of all...", "Moving on...", "To conclude..."</li>
+      <li>Make eye contact with the audience — avoid reading directly from notes</li>
+      <li>Stress key benefit words to make them memorable to the listener</li>
+    </ul>
+    <div class="flex-row"><div class="spacer"></div><button class="btn-navy" onclick="completeSpeaking()">Complete Module →</button></div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════ FINAL TEST ══════════════════════════════════ -->
+<div class="screen" id="screen-finaltest">
+  <div class="test-header">
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px">
+      <div style="width:40px;height:40px;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;border-radius:5px;overflow:hidden;border:1.5px solid rgba(255,255,255,0.3);flex-shrink:0">
+        <div style="background:#1e3d6b;display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:700;color:white;font-family:'Playfair Display',serif">N</div>
+        <div style="background:var(--gold);display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:700;color:white;font-family:'Playfair Display',serif">Y</div>
+        <div style="background:var(--gold);display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:700;color:white;font-family:'Playfair Display',serif">L</div>
+        <div style="background:#1e3d6b;display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:700;color:white;font-family:'Playfair Display',serif">C</div>
+      </div>
+      <div>
+        <h2>NYLC Business English Test</h2>
+        <p>Official examination format — all four parts</p>
+      </div>
+    </div>
+  </div>
+  <div class="test-parts-grid">
+    <div class="test-part"><div class="part-num" style="color:var(--navy)">Part I</div><h4>Listening</h4><p>10 questions · CEO factory speech</p></div>
+    <div class="test-part"><div class="part-num" style="color:var(--green)">Part II</div><h4>Reading</h4><p>5 questions · Business article</p></div>
+    <div class="test-part"><div class="part-num" style="color:var(--gold-dark)">Part III</div><h4>Writing</h4><p>1 formal business letter · 20 pts</p></div>
+    <div class="test-part"><div class="part-num" style="color:#7a3a5a">Part IV</div><h4>Speaking</h4><p>2-min presentation · 20 pts</p></div>
+  </div>
+  <div class="scoring-note">
+    <strong>Scoring:</strong> Listening (10 pts) + Reading (10 pts) + Writing (20 pts) + Speaking (20 pts) = <strong>60 points total.</strong> A score of 42 or above (70%) is considered a pass. Parts III and IV are marked by your course instructor.
+  </div>
+  <div class="flex-row">
+    <button class="btn-ghost" onclick="showScreen('screen-modules')">← Back to Modules</button>
+    <div class="spacer"></div>
+    <button class="btn-navy" style="font-size:15px;padding:14px 36px" onclick="startFinalTest()">Begin Test →</button>
+  </div>
+  <div id="final-test-content" style="margin-top:24px"></div>
+</div>
+
+<!-- ══════════════════════════════════ RESULTS ══════════════════════════════════ -->
+<div class="screen" id="screen-results">
+  <div class="cert-banner">
+    <div style="font-size:40px;margin-bottom:12px">🎓</div>
+    <h2>Certificate of Completion</h2>
+    <p>NYLC Business English Course — all four modules completed</p>
+  </div>
+  <div class="score-display">
+    <div class="score-ring-wrap">
+      <svg width="100" height="100" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="42" fill="none" stroke="#e8e4dc" stroke-width="7"/>
+        <circle cx="50" cy="50" r="42" fill="none" stroke="#2B5590" stroke-width="7"
+          stroke-dasharray="264" stroke-dashoffset="79"
+          stroke-linecap="round" transform="rotate(-90 50 50)" id="score-arc"/>
+      </svg>
+      <div style="margin-top:-60px;position:relative;z-index:1">
+        <div class="big-num" id="final-score">42</div>
+        <div class="big-sub">/ 60 pts</div>
+      </div>
+      <div style="margin-top:48px"></div>
+    </div>
+    <div class="score-verdict">
+      <div class="verdict-title" id="verdict-title">Pass — Well done!</div>
+      <div class="verdict-desc" id="verdict-desc">You have demonstrated strong Business English competency across all four tested areas.</div>
+    </div>
+  </div>
+  <div class="breakdown">
+    <div class="breakdown-row"><span class="sec-name">Part I — Listening</span><span class="score-pill sp-good" id="r-listen">8 / 10</span></div>
+    <div class="breakdown-row"><span class="sec-name">Part II — Reading</span><span class="score-pill sp-good" id="r-read">8 / 10</span></div>
+    <div class="breakdown-row"><span class="sec-name">Part III — Writing</span><span class="score-pill sp-mid">Assessed by instructor · 20 pts</span></div>
+    <div class="breakdown-row"><span class="sec-name">Part IV — Speaking</span><span class="score-pill sp-mid">Assessed by instructor · 20 pts</span></div>
+  </div>
+  <div class="flex-row" style="justify-content:center;gap:14px">
+    <button class="btn-ghost" onclick="showScreen('screen-modules')">Review Modules</button>
+    <button class="btn-navy" onclick="restartCourse()">Start Again</button>
+  </div>
+</div>
+
+</div><!-- /shell -->
+
+<script>
+// ── DATA ──
+const listeningQs = [
+  {q:"What does Innes say about the history of the company?",opts:["The company is more than two hundred years old.","In the past ten years, the company has changed from being complacent to being competitive.","It used to be family-owned and that helped create the company culture."],ans:2,exp:"Innes mentions the family heritage of the company and how it shaped company culture."},
+  {q:"Who needs to ask whether the company is running smoothly, whether communication with customers is good, and how services can be improved?",opts:["All of Talbot's employees","Talbot's management","Talbot's customers"],ans:0,exp:"Innes says every employee — not just management — must continually ask these questions."},
+  {q:"What does Innes say he wants to give Talbot's customers?",opts:["The best value for money","A relationship that lasts years rather than months","Clear goals"],ans:1,exp:"Innes emphasises long-term customer relationships lasting years, not just months."},
+  {q:"How does Talbot prefer to work with customers?",opts:["To fill their orders accurately and quickly","To collaborate on research and development","To carry out market research on behalf of customers"],ans:1,exp:"Talbot's approach is collaborative R&D partnerships with customers, not just order fulfilment."},
+  {q:"What can workers at Daisy Hill expect to see?",opts:["Executive managers who want to understand production processes","Quality control inspectors checking work","Customers who want to see how products are made"],ans:2,exp:"Innes says customers will visit the factory to see production — a sign of transparency."},
+  {q:"What does Innes say Talbot factors into its production costs?",opts:["The human side of production","Depreciation of equipment","Regular pay increases"],ans:0,exp:"Innes specifically mentions 'the human side' as something Talbot includes in production costs."},
+  {q:"How much of its production does Talbot export?",opts:["14 per cent","40 per cent","44 per cent"],ans:1,exp:"Innes states that 40 per cent of production is exported — listen carefully for numbers."},
+  {q:"What can we infer from Innes's mention of China?",opts:["Talbot's main competition will be from Chinese companies.","Talbot hopes to manufacture more cheaply in China for import to the UK.","Talbot hopes to increase its sales outside of the UK."],ans:2,exp:"The implication of establishing a presence in China is to access new international markets and grow exports."},
+  {q:"What is the current status of Talbot's production in China?",opts:["Some joint ventures have already been set up.","Several factories have already commenced production.","A timeline has been established for outsourcing work to Asia."],ans:0,exp:"Innes says joint ventures in China are already in place — a current fact, not a future plan."},
+  {q:"What opportunity will some Daisy Hill workers be offered?",opts:["The chance to take on management jobs in Chinese factories","The chance to be trained in the latest manufacturing techniques","The chance to go to China to provide training"],ans:2,exp:"Innes offers selected workers the opportunity to travel to China to train local staff."}
+];
+
+const readingQs = [
+  {q:"What do companies not understand well, according to recent research?",opts:["What attracts workers to join a company.","What makes workers want to stay in a job.","What makes employees want to perform well in a job."],ans:1,exp:"The research focuses specifically on retention — what keeps employees from leaving."},
+  {q:"Which of these was among employees' main motivations?",opts:["Recognition of individual achievement","The company's ethics","The remuneration package"],ans:0,exp:"Recognition of individual achievement ranked highest among employee motivators — above pay."},
+  {q:"How have workers responded to the economic downturn?",opts:["A large percentage accepted jobs way below their ability level.","Many developed new expertise to apply to their work.","They have had to conceal a lack of ability to compete in the job market."],ans:0,exp:"The article states that many workers accepted positions below their qualification level during the downturn."},
+  {q:"What does Brian Wilkinson recommend companies invest in?",opts:["Cost-cutting technology","Retaining key staff","Making employment more flexible"],ans:1,exp:"Wilkinson specifically recommends investing in retention programmes for key employees."},
+  {q:"What does the article say about employees working away from the office?",opts:["It is increasingly popular with workers.","Many employers are already strongly encouraging it.","It is unlikely to be a permanent solution for most companies."],ans:2,exp:"The article suggests remote working has limits — it is not seen as a permanent solution for most organisations."}
+];
+
+// ── STATE ──
+let currentQuiz=[], currentQ=0, score=0, answered=false, quizType='';
+let completedModules=0;
+let finalQ=0, finalScore=0, finalAnswered=false;
+const allFinalQs=[...listeningQs,...readingQs];
+
+// ── NAVIGATION ──
+function showScreen(id){
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  const labels={'screen-home':'Course Home','screen-modules':'Course Overview','screen-listening':'Module 1 — Listening','screen-reading':'Module 2 — Reading','screen-writing':'Module 3 — Writing','screen-speaking':'Module 4 — Speaking','screen-finaltest':'NYLC Final Test','screen-results':'Results'};
+  document.getElementById('nav-label').textContent=labels[id]||'';
+  window.scrollTo(0,0);
+}
+function startModule(m){showScreen('screen-'+m)}
+
+// ── QUIZ ENGINE ──
+function startListeningQuiz(){
+  document.getElementById('listen-lesson').style.display='none';
+  document.getElementById('listen-quiz').style.display='block';
+  currentQuiz=listeningQs; currentQ=0; score=0; answered=false; quizType='listening';
+  renderQuestion('listen-quiz');
+}
+function startReadingQuiz(){
+  document.getElementById('read-lesson').style.display='none';
+  document.getElementById('read-quiz').style.display='block';
+  currentQuiz=readingQs; currentQ=0; score=0; answered=false; quizType='reading';
+  renderQuestion('read-quiz');
+}
+
+function renderQuestion(cid){
+  const el=document.getElementById(cid);
+  const q=currentQuiz[currentQ];
+  const letters=['A','B','C','D'];
+  const pct=Math.round(currentQ/currentQuiz.length*100);
+  el.innerHTML=`<div class="quiz-wrap">
+    <div class="q-counter-bar">
+      <span class="q-counter">Q${currentQ+1} of ${currentQuiz.length}</span>
+      <div class="q-mini-prog"><div class="q-mini-fill" style="width:${pct}%"></div></div>
+      <span class="q-score-badge">Score: ${score}</span>
+    </div>
+    <div class="quiz-q">${q.q}</div>
+    <div class="quiz-options">${q.opts.map((o,i)=>`
+      <button class="opt-btn" onclick="selectAnswer(${i},'${cid}')" id="opt-${i}">
+        <span class="opt-letter">${letters[i]}</span><span>${o}</span>
+      </button>`).join('')}</div>
+    <div id="quiz-feedback"></div>
+    <div class="quiz-actions"><button class="btn-navy" id="next-btn" onclick="nextQuestion('${cid}')" style="display:none">Next Question →</button></div>
+  </div>`;
+}
+
+function selectAnswer(idx,cid){
+  if(answered)return;
+  answered=true;
+  const q=currentQuiz[currentQ];
+  document.querySelectorAll('.opt-btn').forEach((b,i)=>{
+    b.disabled=true;
+    if(i===q.ans)b.classList.add('correct');
+    else if(i===idx)b.classList.add('wrong');
+  });
+  if(idx===q.ans)score++;
+  const fb=document.getElementById('quiz-feedback');
+  fb.className='feedback '+(idx===q.ans?'correct':'wrong');
+  fb.innerHTML=idx===q.ans?`✓ Correct! ${q.exp}`:`✗ The correct answer is option ${['A','B','C'][q.ans]}. ${q.exp}`;
+  document.getElementById('next-btn').style.display='inline-block';
+}
+
+function nextQuestion(cid){
+  currentQ++; answered=false;
+  if(currentQ>=currentQuiz.length)showQuizComplete(cid);
+  else renderQuestion(cid);
+}
+
+function showQuizComplete(cid){
+  const el=document.getElementById(cid);
+  const pct=Math.round(score/currentQuiz.length*100);
+  const pass=pct>=70;
+  el.innerHTML=`<div class="quiz-wrap"><div class="quiz-done">
+    <div class="big-emoji">${pass?'🎉':'📚'}</div>
+    <h3>${score} / ${currentQuiz.length}</h3>
+    <p>${pct}% — ${pass?'Excellent result! You are ready for the NYLC test.':'Keep practising. Review the lesson material and try again.'}</p>
+    <div class="flex-row" style="justify-content:center;gap:12px">
+      <button class="btn-ghost" onclick="retryQuiz('${cid}')">Retry Quiz</button>
+      <button class="btn-navy" onclick="markDone('${cid}')">Complete Module →</button>
+    </div>
+  </div></div>`;
+}
+
+function retryQuiz(cid){currentQ=0;score=0;answered=false;renderQuestion(cid)}
+function markDone(cid){
+  completedModules++;
+  updateProgress();
+  if(cid==='listen-quiz')document.getElementById('m1-done').style.display='inline-block';
+  if(cid==='read-quiz')document.getElementById('m2-done').style.display='inline-block';
+  showScreen('screen-modules');
+}
+
+// ── WRITING ──
+function showWritingPractice(){
+  document.getElementById('write-lesson').style.display='none';
+  document.getElementById('write-practice').style.display='block';
+}
+function insertPart(el,label){
+  const ta=document.getElementById('letter-area');
+  ta.value+=label; el.classList.add('used'); ta.focus();
+}
+function checkLetter(){
+  const text=document.getElementById('letter-area').value;
+  const parts=['[HEADING]','[INSIDE ADDRESS]','[SALUTATION]','[BODY]','[SIGNATURE]'];
+  const missing=parts.filter(p=>!text.includes(p));
+  const fb=document.getElementById('letter-feedback');
+  if(missing.length===0){fb.className='feedback correct';fb.textContent='✓ All five parts are labelled and present. Review your language and tone before the test.'}
+  else{fb.className='feedback wrong';fb.textContent='Missing sections: '+missing.join(', ')+'. Make sure every part is labelled in your letter.'}
+}
+function completeWriting(){
+  completedModules++; updateProgress();
+  document.getElementById('m3-done').style.display='inline-block';
+  showScreen('screen-modules');
+}
+
+// ── SPEAKING ──
+const invData={
+  'Redundant Recumbent':{hook:"Did you know that back pain costs the US economy over $100 billion every year? What if a single piece of furniture could change that?",works:"The Redundant Recumbent allows users to work at a computer while lying in a fully reclined position. The screen is angled directly overhead, the keyboard sits at a natural arm position, and padded supports keep the wrists perfectly aligned.",benefit:"It eliminates the neck, back and wrist strain caused by hours of upright sitting — making it ideal for remote workers, designers, and anyone who spends long hours at a desk."},
+  'Insect Ball':{hook:"Imagine spending a whole summer evening outdoors without a single insect flying near your face. Sounds impossible? Not anymore.",works:"A small ball, infused with a specially formulated insect repellent, attaches to the front of any standard hat. The ball releases a scent that actively attracts insects toward it — and completely away from the wearer's face.",benefit:"It is hands-free, leaves no chemicals on the skin, and works continuously throughout the day — perfect for hikers, gardeners, and outdoor workers."},
+  'Arm Mitten':{hook:"Did you know that over 90% of skin cancers are caused by UV radiation? And most drivers never think to protect their left arm.",works:"The Arm Mitten is a lightweight, breathable SPF-50 sleeve that slips easily over the arm resting on the car window. Made from flexible UV-protective fabric, it covers the forearm fully without restricting any movement.",benefit:"It provides complete sun protection for the most exposed arm while driving — no sunscreen required, no mess, no re-application needed."},
+  'Dumbo Bo':{hook:"What if you could dramatically improve your hearing simply by changing your hat? Scientists have been inspired by animal biology to do exactly that.",works:"The Dumbo Bo is a lightweight, flexible acoustic flap that clips on to the brim of any standard baseball hat. Its curved shape acts as a funnel, directing sound waves toward the ear in the same way that large animal ears work in nature.",benefit:"It is ideal for people who are hard of hearing, for use at concerts, sports events, or in noisy outdoor environments — discreet, lightweight, and remarkably effective."}
+};
+let selectedInv=null;
+function selectInvention(el,name){
+  document.querySelectorAll('.inv-card').forEach(c=>c.classList.remove('selected'));
+  el.classList.add('selected'); selectedInv=name;
+  const d=invData[name];
+  document.getElementById('inv-name-display').textContent=name;
+  document.getElementById('hook-text').textContent=d.hook;
+  document.getElementById('works-text').textContent=d.works;
+  document.getElementById('benefit-text').textContent=d.benefit;
+  document.getElementById('speaking-outline').style.display='block';
+  document.getElementById('speaking-outline').scrollIntoView({behavior:'smooth',block:'start'});
+}
+function completeSpeaking(){
+  completedModules++; updateProgress();
+  document.getElementById('m4-done').style.display='inline-block';
+  showScreen('screen-modules');
+}
+
+// ── FINAL TEST ──
+function startFinalTest(){
+  finalQ=0; finalScore=0; finalAnswered=false;
+  const el=document.getElementById('final-test-content');
+  el.innerHTML=`<div style="font-family:'Playfair Display',serif;font-size:18px;font-weight:500;color:var(--navy);margin-bottom:4px">Part I: Listening Comprehension</div>
+  <div style="font-size:13px;color:var(--text-muted);margin-bottom:16px">Answer each question based on the CEO speech by Robert Innes of Talbot Engineering.</div>
+  <div id="final-quiz-area"></div>`;
+  renderFinalQ();
+}
+function renderFinalQ(){
+  const area=document.getElementById('final-quiz-area');
+  if(!area)return;
+  if(finalQ>=allFinalQs.length){showFinalResults();return}
+  const q=allFinalQs[finalQ];
+  const letters=['A','B','C'];
+  const pct=Math.round(finalQ/allFinalQs.length*100);
+  const sectionBreak=finalQ===10?`<div class="divider"></div><div style="font-family:'Playfair Display',serif;font-size:18px;font-weight:500;color:var(--navy);margin-bottom:4px">Part II: Reading Comprehension</div><div style="font-size:13px;color:var(--text-muted);margin-bottom:16px">Answer each question based on the article about employee motivation and retention.</div>`:'';
+  area.innerHTML=sectionBreak+`<div class="quiz-wrap">
+    <div class="q-counter-bar">
+      <span class="q-counter">Question ${finalQ+1} of ${allFinalQs.length}</span>
+      <div class="q-mini-prog"><div class="q-mini-fill" style="width:${pct}%"></div></div>
+      <span class="q-score-badge">${finalScore} correct</span>
+    </div>
+    <div class="quiz-q">${q.q}</div>
+    <div class="quiz-options">${q.opts.map((o,i)=>`<button class="opt-btn" onclick="selectFinal(${i})" id="fopt-${i}"><span class="opt-letter">${letters[i]}</span><span>${o}</span></button>`).join('')}</div>
+    <div id="final-fb"></div>
+    <div class="quiz-actions"><button class="btn-navy" id="fnext-btn" onclick="nextFinal()" style="display:none">${finalQ===allFinalQs.length-1?'See Results →':'Next Question →'}</button></div>
+  </div>`;
+}
+function selectFinal(idx){
+  if(finalAnswered)return;
+  finalAnswered=true;
+  const q=allFinalQs[finalQ];
+  document.querySelectorAll('.opt-btn').forEach((b,i)=>{b.disabled=true;if(i===q.ans)b.classList.add('correct');else if(i===idx)b.classList.add('wrong')});
+  if(idx===q.ans)finalScore++;
+  const fb=document.getElementById('final-fb');
+  fb.className='feedback '+(idx===q.ans?'correct':'wrong');
+  fb.textContent=idx===q.ans?`✓ Correct!`:`✗ Correct answer: ${q.opts[q.ans]}`;
+  document.getElementById('fnext-btn').style.display='inline-block';
+}
+function nextFinal(){finalQ++;finalAnswered=false;renderFinalQ()}
+function showFinalResults(){
+  const area=document.getElementById('final-quiz-area');
+  const pct=Math.round(finalScore/allFinalQs.length*100);
+  area.innerHTML=`<div class="quiz-wrap"><div class="quiz-done">
+    <div class="big-emoji">${pct>=70?'🎉':'📚'}</div>
+    <h3>${finalScore} / ${allFinalQs.length} — Listening &amp; Reading</h3>
+    <p>${pct}% on Parts I &amp; II. Parts III (Writing) and IV (Speaking) are assessed by your instructor (max 40 pts).</p>
+    <div class="flex-row" style="justify-content:center;gap:12px">
+      <button class="btn-ghost" onclick="restartFinalTest()">Retake Test</button>
+      <button class="btn-navy" onclick="showFullResults(${finalScore})">View Full Report →</button>
+    </div>
+  </div></div>`;
+}
+function restartFinalTest(){startFinalTest()}
+function showFullResults(s){
+  const total=s+30;
+  const arc=264*(1-total/60);
+  document.getElementById('score-arc').setAttribute('stroke-dashoffset',arc.toFixed(1));
+  document.getElementById('final-score').textContent=total;
+  document.getElementById('r-listen').textContent=Math.min(s,10)+' / 10';
+  document.getElementById('r-read').textContent=Math.max(0,s-10)+' / 10';
+  const pass=total>=42;
+  document.getElementById('verdict-title').textContent=pass?'Pass — Well done!':'Not yet a pass — keep practising';
+  document.getElementById('verdict-title').style.color=pass?'var(--green)':'var(--red)';
+  document.getElementById('verdict-desc').textContent=pass?'You have demonstrated strong Business English competency across all four tested areas.':'Review the modules and focus on your weaker areas before retaking the test.';
+  showScreen('screen-results');
+}
+
+function updateProgress(){
+  const pct=Math.min(100,Math.round(completedModules/4*100));
+  document.getElementById('prog-fill').style.width=pct+'%';
+  document.getElementById('prog-pct').textContent=pct+'%';
+}
+function restartCourse(){completedModules=0;updateProgress();showScreen('screen-home')}
+</script>
+</body>
+</html>
